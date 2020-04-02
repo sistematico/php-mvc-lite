@@ -9,7 +9,7 @@
             "email": "lucas@archlinux.com.br"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {},
     "autoload":
     {
