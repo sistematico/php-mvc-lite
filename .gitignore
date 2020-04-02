@@ -1,0 +1,10 @@
+vendor/
+db/
+webfonts/
+app/config/config.php
+jquery.min.js
+bootstrap.bundle.min.js
+bootstrap.min.css
+fontawesome.min.css
+composer.lock
+*.map
