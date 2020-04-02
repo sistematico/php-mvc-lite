@@ -1,0 +1,21 @@
+{
+    "name": "sistematico/php-mvc-lite",
+    "description": "Simple PHP MVC CRUD example using SQLite",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sistematico",
+            "email": "lucas@archlinux.com.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload":
+    {
+        "psr-4":
+        {
+            "App\\" : "app/"
+        }
+    }
+}
