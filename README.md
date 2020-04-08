@@ -44,10 +44,6 @@ server {
 }
 ```
 
-## Apache
-
-Em breve.
-
 ## Demo
 
 - [https://mvc-lite.lucasbrum.net](https://mvc-lite.lucasbrum.net)
