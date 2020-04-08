@@ -9,13 +9,22 @@
             "email": "lucas@archlinux.com.br"
         }
     ],
-    "minimum-stability": "stable",
-    "require": {},
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "require": {
+        "twbs/bootstrap": "^4",
+        "components/jquery": "^3"
+    },
     "autoload":
     {
         "psr-4":
         {
             "App\\" : "app/"
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php -r bootstrap.php"
+        ]
     }
 }
