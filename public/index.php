@@ -14,7 +14,9 @@ define('DB_FILE', ROOT . 'db' . DIRECTORY_SEPARATOR . 'banco.sqlite');
 require ROOT . 'vendor/autoload.php';
 
 // load application config (error reporting etc.)
-require APP . 'config/config.php';
+if (file_exists(APP . 'config/config.php')) {
+    require APP . 'config/config.php';
+}
 
 // load application class
 use App\Core\Application;
