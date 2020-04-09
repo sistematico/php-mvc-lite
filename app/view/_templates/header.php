@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="<?php echo URL; ?>css/bootstrap.min.css">
     <title>PHP MVC Lite</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- JS -->
-    <!-- please note: The JavaScript files are loaded in the footer to speed up page construction -->
-    <!-- See more here: http://stackoverflow.com/q/2105327/1114320 -->
-
-    <!-- CSS -->
-    <link href="<?php echo URL; ?>css/style.css" rel="stylesheet">
 </head>
 <body>
-    <!-- logo, check the CSS file for more info how the logo "image" is shown -->
     <div class="logo"></div>
-
-    <!-- navigation -->
     <div class="navigation">
         <a href="<?php echo URL; ?>">home</a>
         <a href="<?php echo URL; ?>home/exampleone">home/exampleone</a>
