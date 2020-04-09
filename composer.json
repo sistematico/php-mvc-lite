@@ -13,7 +13,8 @@
     "minimum-stability": "dev",
     "require": {
         "twbs/bootstrap": "^4",
-        "components/jquery": "^3"
+        "components/jquery": "^3",
+        "components/font-awesome": "^5"
     },
     "autoload":
     {
@@ -24,7 +25,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "php -r bootstrap.php"
+            "php bootstrap.php"
         ]
     }
 }
