@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 
 if (file_exists('vendor/components/font-awesome/webfonts/')) {
