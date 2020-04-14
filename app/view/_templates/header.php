@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="<?php echo URL; ?>css/bootstrap.min.css">
     <title>PHP MVC Lite</title>
+    <link rel="shortcut icon" href="<?php echo URL; ?>img/favicon.ico">
 </head>
 <body class="d-flex flex-column h-100">
     <header>
