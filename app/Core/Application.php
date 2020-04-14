@@ -25,7 +25,7 @@ class Application
         // check for controller: no controller given ? then load start-page
         if (!$this->url_controller) {
 
-            $page = new \App\Controller\HomeController();
+            $page = new \App\Controller\PagesController();
             $page->index();
 
         } elseif (file_exists(APP . 'Controller/' . ucfirst($this->url_controller) . 'Controller.php')) {
@@ -53,13 +53,13 @@ class Application
                     // no action defined: call the default index() method of a selected controller
                     $this->url_controller->index();
                 } else {
-                    $page = new \App\Controller\ErrorController();
-                    $page->index();
+                    $page = new \App\Controller\PagesController();
+                    $page->error();
                 }
             }
         } else {
-            $page = new \App\Controller\ErrorController();
-            $page->index();
+            $page = new \App\Controller\PagesController();
+            $page->error();
         }
     }
 
