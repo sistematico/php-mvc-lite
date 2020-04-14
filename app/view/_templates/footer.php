@@ -1,8 +1,11 @@
-<div class="footer">
-    Find <a href="https://github.com/panique/mini3">MINI3 on GitHub</a>.
-    If you like the project, support it by <a href="http://tracking.rackspace.com/SH1ES">using Rackspace</a> as your
-    hoster [affiliate link].
-</div>
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <span class="text-muted">
+            Fontes no <a href="https://github.com/sistematico/php-mvc-lite">Github</a>.
+            Orgulhosamente hospedado por <a href="https://www.owned-networks.net/client_area/aff.php?aff=11">Owned-Networks</a>.
+        </span>
+    </div>
+</footer>
 <script src="<?php echo URL; ?>js/jquery.min.js"></script>
 <script src="<?php echo URL; ?>js/bootstrap.bundle.min.js"></script>
 <script>
