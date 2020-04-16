@@ -1,4 +1,4 @@
-<div class="container">
+<main role="main" class="container">
     <h1>Songs</h1>
     <h2>You are in the View: app/view/song/index.php (everything in this box comes from that file)</h2>
     <!-- add song form -->
@@ -52,4 +52,4 @@
             </tbody>
         </table>
     </div>
-</div>
+</main>

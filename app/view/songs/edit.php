@@ -1,4 +1,4 @@
-<div class="container">
+<main role="main" class="container">
     <h2>You are in the View: app/view/song/edit.php (everything in this box comes from that file)</h2>
     <!-- add song form -->
     <div>
@@ -14,5 +14,5 @@
             <input type="submit" name="submit_update_song" value="Update" />
         </form>
     </div>
-</div>
+</main>
 
