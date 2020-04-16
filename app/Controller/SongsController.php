@@ -97,8 +97,8 @@ class SongsController
 
             // If the song wasn't found, then it would have returned false, and we need to display the error page
             if ($song === false) {
-                $page = new \App\Controller\ErrorController();
-                $page->index();
+                $page = new \App\Controller\PagesController();
+                $page->error();
             } else {
                 // load views. within the views we can echo out $song easily
                 require APP . 'view/_templates/header.php';
