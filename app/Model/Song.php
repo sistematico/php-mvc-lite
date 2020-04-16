@@ -36,7 +36,7 @@ class Song extends Model
         $query = $this->db->prepare($sql);
         $parameters = array(':song_id' => $song_id);
         $query->execute($parameters);
-        return ($query->rowcount() ? $query->fetch() : false);
+        return $query->fetch();
     }
 
     public function updateSong($artist, $track, $link, $song_id)

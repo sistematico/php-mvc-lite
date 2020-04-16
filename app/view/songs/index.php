@@ -1,20 +1,23 @@
 <main role="main" class="container">
     <h1>Songs</h1>
     <h2>You are in the View: app/view/song/index.php (everything in this box comes from that file)</h2>
-    <!-- add song form -->
-    <div class="box">
-        <h3>Add a song</h3>
-        <form action="<?php echo URL; ?>songs/addsong" method="POST">
-            <label>Artist</label>
-            <input type="text" name="artist" value="" required />
-            <label>Track</label>
-            <input type="text" name="track" value="" required />
-            <label>Link</label>
-            <input type="text" name="link" value="" />
-            <input type="submit" name="submit_add_song" value="Submit" />
-        </form>
-    </div>
-    <!-- main content output -->
+    <h3>Add a song</h3>
+    <form class="form-inline" action="<?php echo URL; ?>songs/addsong" method="post">
+        <div class="form-group mb-2 mr-2">
+            <label for="artist" class="sr-only">Artist</label>
+            <input name="artist" type="text" class="form-control" id="artist" placeholder="Artist">
+        </div>
+        <div class="form-group mb-2 mr-2">
+            <label for="track" class="sr-only">Track</label>
+            <input name="track" type="text" class="form-control" id="track" placeholder="Track">
+        </div>
+        <div class="form-group mb-2 mr-2">
+            <label for="link" class="sr-only">Link</label>
+            <input name="link" type="text" class="form-control" id="link" placeholder="Link">
+        </div>
+        <button name="submit_add_song" type="submit" class="btn btn-primary mb-2">Add</button>
+    </form>
+
     <div class="box">
         <h3>Amount of songs: <?php echo $amount_of_songs; ?></h3>
         <h3>Amount of songs (via AJAX)</h3>
