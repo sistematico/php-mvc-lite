@@ -62,6 +62,17 @@ class SongsController
         header('location: ' . URL . 'songs/index');
     }
 
+    public function search()
+    {
+        if (isset($_POST["term"])) {
+            $Song = new Song();
+            $result = $Song->searchByTrackOrArtist($_POST["term"]);
+        } 
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/songs/search.php';
+        require APP . 'view/_templates/footer.php';
+    }
+
     public function ajaxGetStats()
     {
         $Song = new Song();
@@ -76,9 +87,10 @@ class SongsController
             $result = $Song->install();
         }
         //header('location: ' . URL . 'songs/index');
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/songs/install.php';
-        require APP . 'view/_templates/footer.php';
+        header('location: ' . URL . 'songs');
+        //require APP . 'view/_templates/header.php';
+        //require APP . 'view/songs/install.php';
+        //require APP . 'view/_templates/footer.php';
     }
 
 }

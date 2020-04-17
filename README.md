@@ -14,7 +14,7 @@ Projeto simples de CRUD(Create, Read, Update, Delete) em [PHP](https://php.net) 
 - Descompacte ou clone este repositório no webroot ou outro diretório do seu servidor web.
 - Rode o comando `composer install` no mesmo diretório onde se encontra o arquivo `composer.json`
 - Caso use Gmail(para enviar e-mails através do seu site), visite o site https://accounts.google.com/DisplayUnlockCaptcha para desbloquear sua conta de e-mail.
-- Visite: https://site.com/install
+- Visite: https://site.com/songs/install
 - Reze.
 
 ## Nginx

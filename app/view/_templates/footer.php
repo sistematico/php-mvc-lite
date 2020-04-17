@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="container">
         <span class="text-muted">
-            Created with <i class="fas fa-heart"></i> by <a href="https://lucasbrum.net" target="_blank">Lucas</a>. <div class="d-none d-sm-inline">Sources on <a href="https://github.com/sistematico/php-mvc-lite" target="_blank">Github</a>.
+            Made with <i class="fas fa-heart"></i> by <a href="https://lucasbrum.net" target="_blank">Lucas</a> in Terenos. <div class="d-none d-sm-inline">Sources on <a href="https://github.com/sistematico/php-mvc-lite" target="_blank">Github</a>.
             Proudly hosted by <a href="https://www.owned-networks.net/client_area/aff.php?aff=11" target="_blank">Owned-Networks</a>.</div>
         </span>
     </div>

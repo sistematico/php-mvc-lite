@@ -55,6 +55,28 @@ class Song extends Model
         return $query->fetch()->amount_of_songs;
     }
 
+    public function searchByTrackOrArtist($term) {
+        $term = "%" . $term . "%";
+        $sql = "SELECT id, artist, track, link FROM song WHERE artist LIKE :term OR track LIKE :term";
+        $query = $this->db->prepare($sql);
+        $query->bindParam(':term', $term);
+        //$stmt->execute([':term' => $term]);
+        $query->execute();
+
+        $tasks = [];
+
+        while ($row = $query->fetch(\PDO::FETCH_ASSOC)) {
+            $tasks[] = [
+                'id' => $row['id'],
+                'artist' => $row['artist'],
+                'track' => $row['track'],
+                'link' => $row['link']
+            ];
+        }
+
+        return $tasks;
+    }
+
     public function install() {
         $sql = "CREATE TABLE IF NOT EXISTS song (id INTEGER PRIMARY KEY, artist TEXT, track TEXT, link TEXT)";
 
