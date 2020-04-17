@@ -1,7 +1,8 @@
 <main role="main" class="container">
 
-    <nav aria-label="breadcrumb">
+    <nav aria-label="breadcrumb" class="mt-2">
         <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?php echo URL; ?>">Home</a></li>
             <li class="breadcrumb-item"><a href="<?php echo URL; ?>songs">Songs</a></li>
             <li class="breadcrumb-item active" aria-current="page">Search</li>
         </ol>
@@ -29,7 +30,7 @@
                 <td><?php if (isset($song['track'])) echo htmlspecialchars($song['track'], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td>
                     <?php if (isset($song['link'])) { ?>
-                        <a href="<?php echo htmlspecialchars($song['link'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($song['link'], ENT_QUOTES, 'UTF-8'); ?></a>
+                        <a href="<?php echo htmlspecialchars($song['link'], ENT_QUOTES, 'UTF-8'); ?>" target="_blank"><?php echo htmlspecialchars($song['link'], ENT_QUOTES, 'UTF-8'); ?></a>
                     <?php } ?>
                 </td>
                 <td><a onClick="javascript: return confirm('Are you sure you want to delete?');" href="<?php echo URL . 'songs/deletesong/' . htmlspecialchars($song['id'], ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>

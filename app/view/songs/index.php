@@ -1,6 +1,13 @@
 <main role="main" class="container">
+
+    <nav aria-label="breadcrumb" class="mt-2">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?php echo URL; ?>">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Songs</li>
+        </ol>
+    </nav>
+
     <h1>Songs</h1>
-    <h2>You are in the View: app/view/song/index.php (everything in this box comes from that file)</h2>
     <h3>Add a song</h3>
     <form class="form-inline" action="<?php echo URL; ?>songs/addsong" method="post">
         <div class="form-group mb-2 mr-2">
@@ -20,9 +27,9 @@
 
     <h3>Amount of songs: <?php echo $amount_of_songs; ?></h3>
     <h3>Amount of songs (via AJAX)</h3>
-    <div id="javascript-ajax-result-box"></div>
+    <div id="javascript-ajax-result-box" class="mb-3"></div>
     <div>
-        <button id="javascript-ajax-button">Click here to get the amount of songs via Ajax (will be displayed in #javascript-ajax-result-box ABOVE)</button>
+        <button id="javascript-ajax-button" class="btn btn-danger mb-2">Get Amount</button>
     </div>
 
     <h3>List of songs (data from model)</h3>
@@ -45,7 +52,7 @@
                 <td><?php if (isset($song->track)) echo htmlspecialchars($song->track, ENT_QUOTES, 'UTF-8'); ?></td>
                 <td>
                     <?php if (isset($song->link)) { ?>
-                        <a href="<?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?></a>
+                        <a href="<?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?>" target="_blank"><?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?></a>
                     <?php } ?>
                 </td>
                 <td><a onClick="javascript: return confirm('Are you sure you want to delete?');" href="<?php echo URL . 'songs/deletesong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
