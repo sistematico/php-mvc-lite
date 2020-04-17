@@ -1,6 +1,6 @@
 # PHP MVC SQLite CRUD (Lite Version)
 
-Projeto simples de CRUD(Create, Read, Update, Delete) em [PHP](https://php.net) usando o [Mini3](https://github.com/panique/mini3), [Twitter Boostrap 4](https://getbootstrap.com) e o template [Spur](https://hackerthemes.com/bootstrap-templates/spur/) com o banco de dados em [SQLite3](https://www.sqlite.org).
+Projeto simples de CRUD(Create, Read, Update, Delete) em [PHP](https://php.net) usando o [Mini3](https://github.com/panique/mini3) e o [Twitter Boostrap 4](https://getbootstrap.com) com o banco de dados em [SQLite3](https://www.sqlite.org).
 
 ## Pré-requisitos
 
@@ -11,9 +11,8 @@ Projeto simples de CRUD(Create, Read, Update, Delete) em [PHP](https://php.net) 
 
 ## Instalação
 
-- Descompacte ou clone este repositório no webroot ou outro diretório do seu servidor web.
+- Descompacte ou clone este repositório no webroot do seu servidor web: `cd /var/www/html && git clone https://github.com/sistematico/php-mvc-lite`
 - Rode o comando `composer install` no mesmo diretório onde se encontra o arquivo `composer.json`
-- Caso use Gmail(para enviar e-mails através do seu site), visite o site https://accounts.google.com/DisplayUnlockCaptcha para desbloquear sua conta de e-mail.
 - Visite: https://site.com/songs/install
 - Reze.
 
