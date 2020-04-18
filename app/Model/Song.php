@@ -55,7 +55,8 @@ class Song extends Model
         return $query->fetch()->amount_of_songs;
     }
 
-    public function searchByTrackOrArtist($term) {
+    public function searchTracks($term)
+    {
         $term = "%" . $term . "%";
         $sql = "SELECT id, artist, track, link FROM song WHERE artist LIKE :term OR track LIKE :term";
         $query = $this->db->prepare($sql);
@@ -73,33 +74,37 @@ class Song extends Model
                 'link' => $row['link']
             ];
         }
-
         return $tasks;
     }
 
-    public function install() {
+    public function install()
+    {
         $sql = "CREATE TABLE IF NOT EXISTS song (id INTEGER PRIMARY KEY, artist TEXT, track TEXT, link TEXT)";
-
         try {
             $this->db->exec($sql);
-            return "Success";        
         } catch(\PDOException $e) {
-            return "Error: " . $e->getMessage();
+            echo "Error: " . $e->getMessage();
         }
     }
 
-    public function getTableList() {
-
-        $stmt = $this->pdo->query("SELECT name
-                                   FROM sqlite_master
-                                   WHERE type = 'table'
-                                   ORDER BY name");
-        $tables = [];
-        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-            $tables[] = $row['name'];
-        }
-
-        return $tables;
+    public function getTableList()
+    {
+        $sql = "SELECT name FROM sqlite_master WHERE type='table'";
+        $query = $this->db->query($sql);
+        return $query->fetch();
     }
 
+    public function tableExists($table = 'song')
+    {
+        $sql = "select 1 from $table";
+        try {
+            $this->db->exec($sql);
+            return true;
+        } catch(\PDOException $e) {
+            unset($e);
+            return false;
+        }
+
+        return false;
+    }    
 }
