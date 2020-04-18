@@ -61,4 +61,20 @@
             <?php } ?>
         </tbody>
     </table>
+
+    <h3>List of tables (data from model)</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Table</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($tables as $table) { ?>
+            <tr>
+                <th scope="row"><?php if (isset($table)) echo $table; ?></th>
+            </tr>
+            <?php } ?>
+        </tbody>
+    </table>
 </main>
