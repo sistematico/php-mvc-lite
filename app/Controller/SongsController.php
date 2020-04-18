@@ -9,7 +9,18 @@ class SongsController
     public function index()
     {
         $Song = new Song();
+        if ($Song->tableExists() === true) {
+            $this->list();
+        } else {
+            $this->install();
+        }
+    }
+
+    public function list()
+    {
+        $Song = new Song();
         $songs = $Song->getAllSongs();
+        $tables = $Song->getTableList();
         $amount_of_songs = $Song->getAmountOfSongs();
         require APP . 'view/_templates/header.php';
         require APP . 'view/songs/index.php';
@@ -66,7 +77,7 @@ class SongsController
     {
         if (isset($_POST["term"])) {
             $Song = new Song();
-            $result = $Song->searchByTrackOrArtist($_POST["term"]);
+            $result = $Song->searchTracks($_POST["term"]);
         } 
         require APP . 'view/_templates/header.php';
         require APP . 'view/songs/search.php';
@@ -84,13 +95,13 @@ class SongsController
     {
         if (isset($_POST["install_table"])) {
             $Song = new Song();
-            $result = $Song->install();
+            $Song->install();
+            header('location: ' . URL . 'songs');
+        } else {
+            require APP . 'view/_templates/header.php';
+            require APP . 'view/songs/install.php';
+            require APP . 'view/_templates/footer.php';
         }
-        //header('location: ' . URL . 'songs/index');
-        header('location: ' . URL . 'songs');
-        //require APP . 'view/_templates/header.php';
-        //require APP . 'view/songs/install.php';
-        //require APP . 'view/_templates/footer.php';
     }
 
 }
