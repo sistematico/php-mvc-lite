@@ -24,7 +24,7 @@
         }
     },
     "scripts": {
-        "post-dependencies-solving": [
+        "post-autoload-dump": [
             "php -r \"rename('vendor/components/font-awesome/webfonts/', 'public/webfonts/');\"",
             "php -r \"copy('vendor/twbs/bootstrap/dist/css/bootstrap.min.css', 'public/css/bootstrap.min.css');\"",
             "php -r \"copy('vendor/twbs/bootstrap/dist/css/bootstrap.min.css.map', 'public/css/bootstrap.min.css.map');\"",
