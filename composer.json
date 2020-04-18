@@ -24,8 +24,8 @@
         }
     },
     "scripts": {
-        "post-root-package-install": [
-            "@php bootstrap.php"
+        "post-install-cmd": [
+            "php bootstrap.php"
         ]
     }
 }
