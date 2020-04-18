@@ -53,10 +53,7 @@ server {
 - [Mini3](https://github.com/panique/mini3)
 - [Twitter Boostrap 4](https://getbootstrap.com)
 - [jQuery](https://jquery.com)
-- [Spur](https://hackerthemes.com/bootstrap-templates/spur/)
 - [Composer](https://getcomposer.org)
-- [PHPMailer](https://packagist.org/packages/phpmailer/phpmailer)
-- [Monolog](https://packagist.org/packages/monolog/monolog)
 
 ## Contribuindo
 
