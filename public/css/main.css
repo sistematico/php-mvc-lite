@@ -2,6 +2,10 @@ html {
     position: relative;
     min-height: 100%;
 }
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
   
 body > .container {
     padding: 60px 15px 0;
