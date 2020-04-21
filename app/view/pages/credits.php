@@ -8,5 +8,15 @@
     </nav>
 
     <h1 class="mt-5">Credits</h1>
-    <p class="lead">Work In Progress</p>
+    <p class="lead">
+        This project was only possible through the help of the following other projects:
+        <ul>
+            <li><a href="https://www.archlinux.org" target="_blank">Arch Linux</a></li>
+            <li><a href="https://php.net" target="_blank">PHP</a></li>
+            <li><a href="https://github.com/panique/mini3" target="_blank">Mini 3</a></li>
+            <li><a href="https://getbootstrap.com" target="_blank">Twitter Boostrap 4</a></li>
+            <li><a href="https://getcomposer.org" target="_blank">Composer</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Faith" target="_blank">Faith</a></li>
+        </ul>
+    </p>
 </main>
