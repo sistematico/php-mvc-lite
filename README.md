@@ -1,25 +1,25 @@
 # PHP MVC SQLite CRUD (Lite Version)
 
-Projeto simples de CRUD(Create, Read, Update, Delete) em [PHP](https://php.net) usando o [Mini3](https://github.com/panique/mini3) e o [Twitter Boostrap 4](https://getbootstrap.com) com o banco de dados em [SQLite3](https://www.sqlite.org).
+Simple CRUD project (Create, Read, Update, Delete) made with [PHP](https://php.net), [Mini3](https://github.com/panique/mini3) and [Twitter Boostrap 4](https://getbootstrap.com) with [SQLite3](https://www.sqlite.org) as database.
 
-## Pré-requisitos
+## Prerequisites
 
-- Nginx ou Apache
-- PHP
-- Composer
-- Docker(opcional)
-- Fé
+- [Nginx](https://www.nginx.com) ou [Apache](https://www.apache.org)
+- [PHP](https://php.net)
+- [Composer](https://getcomposer.org)
+- [Docker(opcional)](https://www.docker.com/)
+- [Fé](https://pt.wikipedia.org/wiki/F%C3%A9)
 
-## Instalação
+## Installation
 
-- Descompacte ou clone este repositório no webroot do seu servidor web: `cd /var/www/html && git clone https://github.com/sistematico/php-mvc-lite`
-- Rode o comando `composer install` no mesmo diretório onde se encontra o arquivo `composer.json`
-- Visite: https://site.com/songs/install
-- Reze.
+- Unzip or clone this repository on your web server's webroot: `cd /var/www/html && git clone https://github.com/sistematico/php-mvc-lite`
+- Run command `composer install` in the same directory where the file `composer.json` is located.
+- Go to https://site.com/songs/install
+- Pray.
 
 ## Nginx
 
-Configuração do Nginx:
+Nginx recommended configuration:
 
 ```
 server {
@@ -52,7 +52,7 @@ server {
 
 - [https://mvc-lite.lucasbrum.net](https://mvc-lite.lucasbrum.net)
 
-## Créditos
+## Credits
 
 - [Arch Linux](https://archlinux.org)
 - [Mini3](https://github.com/panique/mini3)
@@ -60,14 +60,14 @@ server {
 - [jQuery](https://jquery.com)
 - [Composer](https://getcomposer.org)
 
-## Contribuindo
+## Contribute
 
-- Colaboradores são bem vindos(as)!
+- Collaborators are welcome!
 
-## Contato
+## Contact
 
 - lucas@archlinux.com.br
 
-## Ajude
+## Help
 
-Doe qualquer valor através do <a href="https://pag.ae/bfxkQW"><img src="https://img.shields.io/badge/pagseguro-green"></a> ou <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DWHJL387XNW96&source=url"><img src="https://img.shields.io/badge/paypal-blue"></a>
+Donate any amount through <a href="https://pag.ae/bfxkQW"><img src="https://img.shields.io/badge/pagseguro-green"></a> or <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DWHJL387XNW96&source=url"><img src="https://img.shields.io/badge/paypal-blue"></a>
