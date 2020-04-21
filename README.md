@@ -4,11 +4,11 @@ Simple CRUD project (Create, Read, Update, Delete) made with [PHP](https://php.n
 
 ## Prerequisites
 
-- [Nginx](https://www.nginx.com) ou [Apache](https://www.apache.org)
+- [Nginx](https://www.nginx.com) or [Apache](https://www.apache.org)
 - [PHP](https://php.net)
 - [Composer](https://getcomposer.org)
 - [Docker(opcional)](https://www.docker.com/)
-- [Fé](https://pt.wikipedia.org/wiki/F%C3%A9)
+- [Faith](https://en.wikipedia.org/wiki/Faith)
 
 ## Installation
 
