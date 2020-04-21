@@ -7,6 +7,7 @@ Projeto simples de CRUD(Create, Read, Update, Delete) em [PHP](https://php.net) 
 - Nginx ou Apache
 - PHP
 - Composer
+- Docker(opcional)
 - Fé
 
 ## Instalação
@@ -18,7 +19,7 @@ Projeto simples de CRUD(Create, Read, Update, Delete) em [PHP](https://php.net) 
 
 ## Nginx
 
-Sugestão de configuração do Nginx:
+Configuração do Nginx:
 
 ```
 server {
@@ -42,6 +43,10 @@ server {
     }
 }
 ```
+
+## Docker
+
+- https://gist.github.com/sistematico/8798adbc6b55e8e34b0bd093588b7a5f
 
 ## Demo
 
