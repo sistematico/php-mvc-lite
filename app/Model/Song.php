@@ -6,6 +6,9 @@ use App\Core\Model;
 
 class Song extends Model
 {
+
+    private $results = [];
+
     public function getAllSongs()
     {
         $sql = "SELECT id, artist, track, link FROM song";
@@ -60,21 +63,16 @@ class Song extends Model
         $term = "%" . $term . "%";
         $sql = "SELECT id, artist, track, link FROM song WHERE artist LIKE :term OR track LIKE :term";
         $query = $this->db->prepare($sql);
-        $query->bindParam(':term', $term);
-        //$stmt->execute([':term' => $term]);
-        $query->execute();
-
-        $tasks = [];
-
-        while ($row = $query->fetch(\PDO::FETCH_ASSOC)) {
-            $tasks[] = [
-                'id' => $row['id'],
-                'artist' => $row['artist'],
-                'track' => $row['track'],
-                'link' => $row['link']
+        $query->execute([':term' => $term]);
+        while ($row = $query->fetch()) {
+            $this->results[] = [
+                'id' => $row->id,
+                'artist' => $row->artist,
+                'track' => $row->track,
+                'link' => $row->link
             ];
         }
-        return $tasks;
+        return $this->results;
     }
 
     public function install()
@@ -82,9 +80,42 @@ class Song extends Model
         $sql = "CREATE TABLE IF NOT EXISTS song (id INTEGER PRIMARY KEY, artist TEXT, track TEXT, link TEXT)";
         try {
             $this->db->exec($sql);
+            return "Table installed.";
         } catch(\PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            unset($e);
+            return "Error: " . $e->getMessage();
         }
+    }
+
+    public function prune($tabela = 'song')
+    {
+        $this->db->exec("DROP TABLE IF EXISTS $tabela");
+
+        try {
+            $this->db->exec("CREATE TABLE IF NOT EXISTS $tabela (id INTEGER PRIMARY KEY, artist TEXT, track TEXT, link TEXT)");
+            return "Tabela $tabela recriada com sucesso.<br />";
+        } catch (\PDOException $e) {
+            return "Erro ao criar tabela $tabela: " . $e->getMessage() . "<br />";
+        }
+    }
+
+    public function populate($file = ROOT . 'songs.sql')
+    {
+        if (file_exists($file)) {
+            $sql = file_get_contents($file);
+        } else {
+            return "File $file not found.";
+        }
+
+        try {
+            $this->db->exec($sql);
+            return "Data imported";
+        } catch(\PDOException $e) {
+            //unset($e);
+            return "Error: " . $e->getMessage();
+        }
+
+        return "Error importing data";
     }
 
     public function getTableList()
@@ -104,7 +135,6 @@ class Song extends Model
             unset($e);
             return false;
         }
-
         return false;
     }    
 }

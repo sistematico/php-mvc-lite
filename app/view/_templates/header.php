@@ -20,14 +20,11 @@
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="<?php echo URL; ?>">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo URL; ?>pages/about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo URL; ?>pages/credits">Credits</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URL; ?>pages/help">Help</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo URL; ?>songs">Songs</a>
