@@ -9,7 +9,7 @@
     </nav>
 
     <h1>Search</h1>
-
+    <div class="table-responsive">
     <table class="table table-striped table-dark">
         <thead>
             <tr>
@@ -38,4 +38,5 @@
             <?php } ?>
         </tbody>
     </table>
+    </div>
 </main>

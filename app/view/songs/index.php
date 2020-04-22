@@ -32,6 +32,7 @@
 
     <?php if (isset($songs) && count($songs) > 0) { ?>
     <h3>List</h3>
+    <div class="table-responsive">
     <table class="table table-striped table-dark">
         <thead>
             <tr>
@@ -60,6 +61,7 @@
             <?php } ?>
         </tbody>
     </table>
+    </div>
 
     <p>Songs: <?php echo $amount_of_songs; ?></small></p>
     <!-- <h3>Amount of songs (via AJAX)</h3>
