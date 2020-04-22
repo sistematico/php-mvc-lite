@@ -9,14 +9,12 @@ class SongsController
     public function index()
     {
         $Song = new Song();
-
         if ($Song->tableExists() === true) {
             $songs = $Song->getAllSongs();
             $amount_of_songs = $Song->getAmountOfSongs();
         } else {
             $result = $Song->install();
         }
-
         require APP . 'view/_templates/header.php';
         require APP . 'view/songs/index.php';
         require APP . 'view/_templates/footer.php';
@@ -42,29 +40,31 @@ class SongsController
         require APP . 'view/_templates/footer.php';
     }
 
-    public function addSong()
+    public function add()
     {
-        if (isset($_POST["submit_add_song"])) {
+        if (isset($_POST["submit_add_song"]) && strlen($_POST["artist"]) > 1) {
             $Song = new Song();
-            $Song->addSong($_POST["artist"], $_POST["track"],  $_POST["link"]);
+            $Song->add($_POST["artist"], $_POST["track"],  $_POST["link"]);
+        }        
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/songs/index.php';
+        require APP . 'view/_templates/footer.php';
+    }
+
+    public function delete($id)
+    {
+        if (isset($id)) {
+            $Song = new Song();
+            $Song->delete($id);
         }
         header('location: ' . URL . 'songs/index');
     }
 
-    public function deleteSong($song_id)
+    public function edit($id)
     {
-        if (isset($song_id)) {
+        if (isset($id)) {
             $Song = new Song();
-            $Song->deleteSong($song_id);
-        }
-        header('location: ' . URL . 'songs/index');
-    }
-
-    public function editSong($song_id)
-    {
-        if (isset($song_id)) {
-            $Song = new Song();
-            $song = $Song->getSong($song_id);
+            $song = $Song->get($id);
 
             if ($song === false) {
                 $page = new \App\Controller\PagesController();
@@ -79,18 +79,18 @@ class SongsController
         }
     }
 
-    public function updateSong()
+    public function update()
     {
         if (isset($_POST["submit_update_song"])) {
             $Song = new Song();
-            $Song->updateSong($_POST["artist"], $_POST["track"],  $_POST["link"], $_POST['song_id']);
+            $Song->update($_POST["artist"], $_POST["track"],  $_POST["link"], $_POST['id']);
         }
         header('location: ' . URL . 'songs/index');
     }
 
     public function search()
     {
-        if (isset($_POST["term"])) {
+        if (isset($_POST["term"]) && strlen($_POST["term"]) > 1) {
             $Song = new Song();
             $result = $Song->searchTracks($_POST["term"]);
         } 

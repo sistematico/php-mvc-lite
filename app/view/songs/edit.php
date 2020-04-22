@@ -11,7 +11,7 @@
     <h1>Songs</h1>
     <h3>Edit a song</h3>
 
-    <form class="form-inline" action="<?php echo URL; ?>songs/updatesong" method="post">
+    <form class="form-inline" action="<?php echo URL; ?>songs/update" method="post">
         <div class="form-group mb-2 mr-2">
             <label for="artist" class="sr-only">Artist</label>
             <input name="artist" type="text" class="form-control" id="artist" placeholder="Artist" value="<?php echo htmlspecialchars($song->artist, ENT_QUOTES, 'UTF-8'); ?>" required />
@@ -24,7 +24,7 @@
             <label for="link" class="sr-only">Link</label>
             <input name="link" type="text" class="form-control" id="link" placeholder="Link" value="<?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?>" />
         </div>
-        <input type="hidden" name="song_id" value="<?php echo htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>" />
+        <input type="hidden" name="id" value="<?php echo htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>" />
         <button name="submit_update_song" type="submit" class="btn btn-primary mb-2">Update</button>
     </form>
 </main>

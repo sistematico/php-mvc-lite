@@ -17,7 +17,7 @@ class Song extends Model
         return $query->fetchAll();
     }
 
-    public function addSong($artist, $track, $link)
+    public function add($artist, $track, $link)
     {
         $sql = "INSERT INTO song (artist, track, link) VALUES (:artist, :track, :link)";
         $query = $this->db->prepare($sql);
@@ -25,28 +25,28 @@ class Song extends Model
         $query->execute($parameters);
     }
 
-    public function deleteSong($song_id)
+    public function delete($id)
     {
-        $sql = "DELETE FROM song WHERE id = :song_id";
+        $sql = "DELETE FROM song WHERE id = :id";
         $query = $this->db->prepare($sql);
-        $parameters = array(':song_id' => $song_id);
+        $parameters = array(':id' => $id);
         $query->execute($parameters);
     }
 
-    public function getSong($song_id)
+    public function get($id)
     {
-        $sql = "SELECT id, artist, track, link FROM song WHERE id = :song_id LIMIT 1";
+        $sql = "SELECT id, artist, track, link FROM song WHERE id = :id LIMIT 1";
         $query = $this->db->prepare($sql);
-        $parameters = array(':song_id' => $song_id);
+        $parameters = array(':id' => $id);
         $query->execute($parameters);
         return $query->fetch();
     }
 
-    public function updateSong($artist, $track, $link, $song_id)
+    public function update($artist, $track, $link, $id)
     {
-        $sql = "UPDATE song SET artist = :artist, track = :track, link = :link WHERE id = :song_id";
+        $sql = "UPDATE song SET artist = :artist, track = :track, link = :link WHERE id = :id";
         $query = $this->db->prepare($sql);
-        $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link, ':song_id' => $song_id);
+        $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link, ':id' => $id);
         $query->execute($parameters);
     }
 

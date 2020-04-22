@@ -14,7 +14,7 @@
     <?php } ?>
 
     <h3>Add a song</h3>
-    <form class="form-inline" action="<?php echo URL; ?>songs/addsong" method="post">
+    <form class="form-inline" action="<?php echo URL; ?>songs/add" method="post">
         <div class="form-group mb-2 mr-2">
             <label for="artist" class="sr-only">Artist</label>
             <input name="artist" type="text" class="form-control" id="artist" placeholder="Artist">
@@ -55,8 +55,8 @@
                         <a href="<?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?>" target="_blank"><?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?></a>
                     <?php } ?>
                 </td>
-                <td><a onClick="javascript: return confirm('Are you sure you want to delete?');" href="<?php echo URL . 'songs/deletesong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>"><i class="fas fa-trash"></i></a></td>
-                <td><a href="<?php echo URL . 'songs/editsong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>"><i class="fas fa-edit"></i></a></td>
+                <td><a onClick="javascript: return confirm('Are you sure you want to delete?');" href="<?php echo URL . 'songs/delete/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>"><i class="fas fa-trash"></i></a></td>
+                <td><a href="<?php echo URL . 'songs/edit/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>"><i class="fas fa-edit"></i></a></td>
             </tr>
             <?php } ?>
         </tbody>
