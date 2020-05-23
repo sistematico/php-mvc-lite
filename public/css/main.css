@@ -1,3 +1,19 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('fonts/nunito.woff2') format('woff2'),
+         url('fonts/nunito.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito-Bold';
+    src: url('fonts/nunito-bold.woff2') format('woff2'),
+         url('fonts/nunito-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     position: relative;
     min-height: 100%;
