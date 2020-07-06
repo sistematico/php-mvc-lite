@@ -2,7 +2,7 @@
     <h1>Conversero</h1>
     <div class="table-responsive">
         <table class="table">
-            <tbody id="mensagens" style="overflow-y: auto"></tbody>
+            <tbody id="mensagens"></tbody>
         </table>
     </div>
 </main>

@@ -32,6 +32,7 @@ class Chat extends Model
     public function add($mensagem)
     {
         try {
+            $mensagem = htmlentities($mensagem, ENT_QUOTES, 'UTF-8');
             $sql = "INSERT INTO chat (mensagem,timestamp) VALUES (:mensagem,:timestamp)";
             $query = $this->db->prepare($sql);
             $query->execute([':mensagem' => $mensagem, ':timestamp' => time()]);

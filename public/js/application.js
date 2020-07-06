@@ -21,11 +21,11 @@ setInterval(() => {
             if (item.usuario) {
                 result += item.usuario
             } else {
-                // result += '<span style="color: ' + color() + '">Anônimo</span>';
                 result += 'Anônimo';
             } 
             result += ' - ';
-            result += strip(item.mensagem) + '<br />';
+            //result += strip(item.mensagem) + '<br />';
+            result += item.mensagem + '<br />';
         });
         $('#mensagens').html(result);
     });
