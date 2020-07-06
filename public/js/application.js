@@ -27,14 +27,15 @@ setInterval(() => {
             result += ' - ';
             result += strip(item.mensagem) + '<br />';
         });
-        $('#mensagens').text(result);
+        $('#mensagens').html(result);
     });
 }, 1000);
 
-function strip(html) {
-   var tmp = document.createElement("DIV");
-   tmp.innerHTML = html;
-   return tmp.textContent||tmp.innerText;
+function strip(string) {
+    var container = document.createElement('div');
+    var text = document.createTextNode(string);
+    container.appendChild(text);
+    return container.innerHTML; // innerHTML will be a xss safe string
 }
 
 function convertTimestamp(timestamp) {
