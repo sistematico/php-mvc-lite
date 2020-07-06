@@ -27,7 +27,7 @@ setInterval(() => {
             result += ' - ';
             result += strip(item.mensagem) + '<br />';
         });
-        $('#mensagens').html(result);
+        $('#mensagens').text(result);
     });
 }, 1000);
 
