@@ -5,7 +5,8 @@ use App\Core\Model;
 
 class Song extends Model
 {
-    private $results = [];
+    //private $results = new stdClass();
+    private $results = array();
 
     public function getAllSongs()
     {
@@ -66,9 +67,10 @@ class Song extends Model
             //     'track' => $row->track,
             //     'link' => $row->link
             // ];
+            //$this->results[] = $row;
             $this->results[] = $row;
         }
-        return $this->results;
+        return (object) $this->results;
     }
 
     public function install()
