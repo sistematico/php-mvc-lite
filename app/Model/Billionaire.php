@@ -84,6 +84,16 @@ class Billionaire extends Model
         }
     }
 
+    public function prune()
+    {
+        try {
+            $this->db->exec("DELETE FROM billionaires;");
+            return "Table dropped.";
+        } catch(\PDOException $e) {
+            return "Error: " . $e->getMessage();
+        }
+    }
+
     public function getTableList()
     {
         $sql = "SELECT name FROM sqlite_master WHERE type='table'";
