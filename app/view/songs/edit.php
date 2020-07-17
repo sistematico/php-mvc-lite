@@ -26,7 +26,7 @@
             <input name="link" type="text" class="form-control" id="link" placeholder="Link" value="<?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?>" />
         </div>
         <input type="hidden" name="song_id" value="<?php echo htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>" />
-        <button name="submit_update_song" type="submit" class="btn btn-primary mb-2">Update</button>
+        <button name="updatesong" type="submit" class="btn btn-primary mb-2">Update</button>
     </form>
     
 </div>

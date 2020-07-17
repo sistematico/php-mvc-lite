@@ -66,7 +66,7 @@ class SongsController
 
     public function updateSong()
     {
-        if (isset($_POST["submit_update_song"])) {
+        if (isset($_POST["updatesong"])) {
             $Song = new Song();
             $Song->updateSong($_POST["artist"], $_POST["track"],  $_POST["link"], $_POST['song_id']);
         }
