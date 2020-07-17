@@ -83,4 +83,11 @@ class BillionairesController
         require APP . 'view/billionaires/index.php';
         require APP . 'view/_templates/footer.php';
     }
+
+    public function prune()
+    {
+        $Billionaire = new Billionaire();
+        $Billionaire->prune();
+        $this->index();
+    }
 }
