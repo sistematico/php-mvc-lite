@@ -1,4 +1,5 @@
 vendor/
+db/
 webfonts/
 jquery.min.js
 bootstrap.bundle.min.js
