@@ -77,7 +77,7 @@ class BillionairesController
     {
         if (isset($_POST["term"])) {
             $Billionaire = new Billionaire();
-            $Billionaires = $Billionaire->search($_POST["term"]);
+            $billionaires = $Billionaire->search($_POST["term"]);
         } 
         require APP . 'view/_templates/header.php';
         require APP . 'view/billionaires/index.php';
