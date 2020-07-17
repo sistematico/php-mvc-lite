@@ -20,7 +20,7 @@
         </div>
         <div class="col">
             <label for="money" class="sr-only">Money</label>
-            <input name="money" type="text" class="form-control" id="money" placeholder="Money" value="<?php echo htmlspecialchars($billionaire->money, ENT_QUOTES, 'UTF-8'); ?>" required />
+            <input name="money" type="number" class="form-control" id="money" placeholder="Money" min="1" max="5" value="<?php echo htmlspecialchars($billionaire->money, ENT_QUOTES, 'UTF-8'); ?>" required>
         </div>
         <div class="col">
             <label for="link" class="sr-only">Link</label>
