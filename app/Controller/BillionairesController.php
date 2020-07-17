@@ -2,25 +2,25 @@
 
 namespace App\Controller;
 
-use App\Model\Song;
+use App\Model\Billionaire;
 
-class SongsController
+class BillionairesController
 {
     public function index()
     {
-        $Song = new Song();
-        if ($Song->tableExists() === true) {
-            $songs = $Song->getAllSongs();
-            $amount = $Song->getAmountOfSongs();
+        $Billionaire = new Billionaire();
+        if ($Billionaire->tableExists() === true) {
+            $Billionaires = $Billionaire->getAllSongs();
+            $amount = $Billionaire->getAmountOfSongs();
         } else {
-            $result = $Song->install();
+            $result = $Billionaire->install();
         }
         require APP . 'view/_templates/header.php';
         require APP . 'view/songs/index.php';
         require APP . 'view/_templates/footer.php';
     }
 
-    public function addSong()
+    public function Bddbillionaire()
     {
         if (isset($_POST["submitsong"]) &&
             isset($_POST["name"]) &&
@@ -30,28 +30,28 @@ class SongsController
             !empty($_POST["money"]) &&
             !empty($_POST["link"]) &&
             filter_var($_POST["link"], FILTER_VALIDATE_URL) !== false) {
-            $Song = new Song();
-            $Song->addSong($_POST["name"], $_POST["money"],  $_POST["link"]);
+            $Billionaire = new Billionaire();
+            $Billionaire->addSong($_POST["name"], $_POST["money"],  $_POST["link"]);
         }
         $this->index();
     }
 
-    public function deleteSong($song_id)
+    public function deleteSong($Billionaire_id)
     {
-        if (isset($song_id)) {
-            $Song = new Song();
-            $Song->deleteSong($song_id);
+        if (isset($Billionaire_id)) {
+            $Billionaire = new Billionaire();
+            $Billionaire->deleteSong($Billionaire_id);
         }
         header('location: ' . URL . 'songs/index');
     }
 
-    public function editSong($song_id)
+    public function editSong($Billionaire_id)
     {
-        if (isset($song_id)) {
-            $Song = new Song();
-            $song = $Song->getSong($song_id);
+        if (isset($Billionaire_id)) {
+            $Billionaire = new Billionaire();
+            $Billionaire = $Billionaire->getSong($Billionaire_id);
 
-            if ($song === false) {
+            if ($Billionaire === false) {
                 $page = new \App\Controller\PagesController();
                 $page->error();
             } else {
@@ -64,11 +64,11 @@ class SongsController
         }
     }
 
-    public function updateSong()
+    public function Bpdatebillionaire()
     {
         if (isset($_POST["updatesong"])) {
-            $Song = new Song();
-            $Song->updateSong($_POST["name"], $_POST["money"],  $_POST["link"], $_POST['song_id']);
+            $Billionaire = new Billionaire();
+            $Billionaire->updateSong($_POST["name"], $_POST["money"],  $_POST["link"], $_POST['song_id']);
         }
         header('location: ' . URL . 'songs/index');
     }
@@ -76,8 +76,8 @@ class SongsController
     public function search()
     {
         if (isset($_POST["term"])) {
-            $Song = new Song();
-            $songs = $Song->searchTracks($_POST["term"]);
+            $Billionaire = new Billionaire();
+            $Billionaires = $Billionaire->searchTracks($_POST["term"]);
         } 
         require APP . 'view/_templates/header.php';
         require APP . 'view/songs/index.php';
