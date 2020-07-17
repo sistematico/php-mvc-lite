@@ -64,9 +64,9 @@ class BillionairesController
         }
     }
 
-    public function Bpdatebillionaire()
+    public function updateBillionaire()
     {
-        if (isset($_POST["updatesong"])) {
+        if (isset($_POST["updatebillionaire"])) {
             $Billionaire = new Billionaire();
             $Billionaire->updateSong($_POST["name"], $_POST["money"],  $_POST["link"], $_POST['song_id']);
         }
