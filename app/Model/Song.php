@@ -16,10 +16,8 @@ class Song extends Model
 
     public function addSong($artist, $track, $link)
     {
-        $sql = "INSERT INTO songs (artist, track, link) VALUES (:artist, :track, :link)";
-        $query = $this->db->prepare($sql);
-        $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link);
-        $query->execute($parameters);
+        $query = $this->db->prepare("INSERT INTO songs (artist, track, link) VALUES (:artist, :track, :link)");
+        $query->execute([':artist' => $artist, ':track' => $track, ':link' => $link]);
     }
 
     public function deleteSong($song_id)
