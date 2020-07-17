@@ -13,7 +13,6 @@ class Song extends Model
         $query = $this->db->prepare("SELECT id, artist, track, link FROM songs");
         $query->execute();
         //return $query->fetchAll();
-
         while ($row = $query->fetch()) {
             $this->results[] = $row;
         }
