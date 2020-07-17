@@ -9,15 +9,16 @@ class Model
 
     function __construct() {
         try {
-            self::open();
+            $this->open();
         } catch (\PDOException $e) {
-            exit('A conexão com o banco de dados não pode ser feita.');
+            exit('The connection to the database cannot be made.');
         }
     }
 
     private function open() {
-        if (!is_dir(dirname(DB_FILE)))
+        if (!is_dir(dirname(DB_FILE))) {
             mkdir(dirname(DB_FILE), 0755);
+        }
 
         $this->db = new PDO('sqlite:' . DB_FILE);
         $this->db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
