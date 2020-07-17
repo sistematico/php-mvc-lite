@@ -10,7 +10,7 @@ class BillionairesController
     {
         $Billionaire = new Billionaire();
         if ($Billionaire->tableExists() === true) {
-            $Billionaires = $Billionaire->getAll();
+            $billionaires = $Billionaire->getAll();
             $amount = $Billionaire->getAmount();
         } else {
             $result = $Billionaire->install();
