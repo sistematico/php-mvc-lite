@@ -15,12 +15,12 @@
     <form class="row g-3" action="<?php echo URL; ?>songs/updatesong" method="post">
         <input type="hidden" name="song_id" value="<?php echo htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>" />
         <div class="col">
-            <label for="artist" class="sr-only">Artist</label>
-            <input name="artist" type="text" class="form-control" id="artist" placeholder="Artist" value="<?php echo htmlspecialchars($song->artist, ENT_QUOTES, 'UTF-8'); ?>" required />
+            <label for="name" class="sr-only">Name</label>
+            <input name="name" type="text" class="form-control" id="name" placeholder="Name" value="<?php echo htmlspecialchars($song->name, ENT_QUOTES, 'UTF-8'); ?>" required />
         </div>
         <div class="col">
-            <label for="track" class="sr-only">Track</label>
-            <input name="track" type="text" class="form-control" id="track" placeholder="Track" value="<?php echo htmlspecialchars($song->track, ENT_QUOTES, 'UTF-8'); ?>" required />
+            <label for="money" class="sr-only">Money</label>
+            <input name="money" type="text" class="form-control" id="money" placeholder="Money" value="<?php echo htmlspecialchars($song->money, ENT_QUOTES, 'UTF-8'); ?>" required />
         </div>
         <div class="col">
             <label for="link" class="sr-only">Link</label>
