@@ -16,7 +16,7 @@
                 <label for="name" class="sr-only">Name</label>
                 <input name="name" type="text" class="form-control" id="name" placeholder="Name">
             </div>
-            <div class="col-sm-4 col-md-3">
+            <div class="col-sm-4 col-md-2">
                 <label for="money" class="sr-only">Money</label>
                 <input name="money" type="number" class="form-control" id="money" placeholder="Money" min="999" max="99999">
             </div>
