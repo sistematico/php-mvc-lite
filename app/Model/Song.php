@@ -10,7 +10,7 @@ class Song extends Model
 
     public function getAllSongs()
     {
-        $query = $this->db->prepare("SELECT id, artist, track, link FROM songs");
+        $query = $this->db->prepare("SELECT id, name, money, link FROM songs");
         $query->execute();
         //return $query->fetchAll();
         while ($row = $query->fetch()) {
@@ -19,18 +19,17 @@ class Song extends Model
         return (object) $this->results;
     }
 
-    public function addSong($artist, $track, $link)
+    public function addSong($name, $money, $link)
     {
-        $query = $this->db->prepare("INSERT INTO songs (artist, track, link) VALUES (:artist, :track, :link)");
-        $query->execute([':artist' => $artist, ':track' => $track, ':link' => $link]);
+        $query = $this->db->prepare("INSERT INTO songs (name, money, link) VALUES (:name, :money, :link)");
+        $query->execute([':name' => $name, ':money' => $money, ':link' => $link]);
     }
 
-    public function deleteSong($song_id)
+    public function deleteSong($id)
     {
-        $sql = "DELETE FROM songs WHERE id = :song_id";
+        $sql = "DELETE FROM songs WHERE id = :id";
         $query = $this->db->prepare($sql);
-        $parameters = array(':song_id' => $song_id);
-        $query->execute($parameters);
+        $query->execute([':id' => $id]);
     }
 
     public function getSong($song_id)
