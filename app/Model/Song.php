@@ -10,7 +10,7 @@ class Song extends Model
 
     public function getAllSongs()
     {
-        $query = $this->db->prepare("SELECT id, name, money, link FROM songs");
+        $query = $this->db->prepare("SELECT id, name, money, link FROM billionaires");
         $query->execute();
         //return $query->fetchAll();
         while ($row = $query->fetch()) {
@@ -21,37 +21,37 @@ class Song extends Model
 
     public function addSong($name, $money, $link)
     {
-        $query = $this->db->prepare("INSERT INTO songs (name, money, link) VALUES (:name, :money, :link)");
+        $query = $this->db->prepare("INSERT INTO billionaires (name, money, link) VALUES (:name, :money, :link)");
         $query->execute([':name' => $name, ':money' => $money, ':link' => $link]);
     }
 
     public function deleteSong($id)
     {
-        $sql = "DELETE FROM songs WHERE id = :id";
+        $sql = "DELETE FROM billionaires WHERE id = :id";
         $query = $this->db->prepare($sql);
         $query->execute([':id' => $id]);
     }
 
-    public function getSong($song_id)
+    public function getSong($id)
     {
-        $sql = "SELECT id, artist, track, link FROM songs WHERE id = :song_id LIMIT 1";
+        $sql = "SELECT id, name, money, link FROM billionaires WHERE id = :id LIMIT 1";
         $query = $this->db->prepare($sql);
-        $parameters = array(':song_id' => $song_id);
+        $parameters = array(':id' => $id);
         $query->execute($parameters);
         return $query->fetch();
     }
 
-    public function updateSong($artist, $track, $link, $song_id)
+    public function updateSong($name, $money, $link, $id)
     {
-        $sql = "UPDATE songs SET artist = :artist, track = :track, link = :link WHERE id = :song_id";
+        $sql = "UPDATE billionaires SET name = :name, money = :money, link = :link WHERE id = :id";
         $query = $this->db->prepare($sql);
-        $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link, ':song_id' => $song_id);
+        $parameters = array(':name' => $name, ':money' => $money, ':link' => $link, ':id' => $id);
         $query->execute($parameters);
     }
 
     public function getAmountOfSongs()
     {
-        $sql = "SELECT COUNT(id) AS amount_of_songs FROM songs";
+        $sql = "SELECT COUNT(id) AS amount_of_songs FROM billionaires";
         $query = $this->db->prepare($sql);
         $query->execute();
         return $query->fetch()->amount_of_songs;
@@ -60,7 +60,7 @@ class Song extends Model
     public function searchTracks($term)
     {
         $term = "%" . $term . "%";
-        $sql = "SELECT id, artist, track, link FROM songs WHERE artist LIKE :term OR track LIKE :term OR link LIKE :term";
+        $sql = "SELECT id, name, money, link FROM billionaires WHERE name LIKE :term OR money LIKE :term OR link LIKE :term";
         $query = $this->db->prepare($sql);
         $query->execute([':term' => $term]);
         while ($row = $query->fetch()) {
@@ -91,7 +91,7 @@ class Song extends Model
         return $query->fetch();
     }
 
-    public function tableExists($table = 'songs')
+    public function tableExists($table = 'billionaires')
     {
         $sql = "select 1 from $table";
         try {
