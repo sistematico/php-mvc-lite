@@ -9,15 +9,14 @@ class Song extends Model
 
     public function getAllSongs()
     {
-        $sql = "SELECT id, artist, track, link FROM song";
-        $query = $this->db->prepare($sql);
+        $query = $this->db->prepare("SELECT id, artist, track, link FROM songs");
         $query->execute();
         return $query->fetchAll();
     }
 
     public function addSong($artist, $track, $link)
     {
-        $sql = "INSERT INTO song (artist, track, link) VALUES (:artist, :track, :link)";
+        $sql = "INSERT INTO songs (artist, track, link) VALUES (:artist, :track, :link)";
         $query = $this->db->prepare($sql);
         $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link);
         $query->execute($parameters);
@@ -25,7 +24,7 @@ class Song extends Model
 
     public function deleteSong($song_id)
     {
-        $sql = "DELETE FROM song WHERE id = :song_id";
+        $sql = "DELETE FROM songs WHERE id = :song_id";
         $query = $this->db->prepare($sql);
         $parameters = array(':song_id' => $song_id);
         $query->execute($parameters);
@@ -33,7 +32,7 @@ class Song extends Model
 
     public function getSong($song_id)
     {
-        $sql = "SELECT id, artist, track, link FROM song WHERE id = :song_id LIMIT 1";
+        $sql = "SELECT id, artist, track, link FROM songs WHERE id = :song_id LIMIT 1";
         $query = $this->db->prepare($sql);
         $parameters = array(':song_id' => $song_id);
         $query->execute($parameters);
@@ -42,7 +41,7 @@ class Song extends Model
 
     public function updateSong($artist, $track, $link, $song_id)
     {
-        $sql = "UPDATE song SET artist = :artist, track = :track, link = :link WHERE id = :song_id";
+        $sql = "UPDATE songs SET artist = :artist, track = :track, link = :link WHERE id = :song_id";
         $query = $this->db->prepare($sql);
         $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link, ':song_id' => $song_id);
         $query->execute($parameters);
@@ -50,7 +49,7 @@ class Song extends Model
 
     public function getAmountOfSongs()
     {
-        $sql = "SELECT COUNT(id) AS amount_of_songs FROM song";
+        $sql = "SELECT COUNT(id) AS amount_of_songs FROM songs";
         $query = $this->db->prepare($sql);
         $query->execute();
         return $query->fetch()->amount_of_songs;
@@ -59,7 +58,7 @@ class Song extends Model
     public function searchTracks($term)
     {
         $term = "%" . $term . "%";
-        $sql = "SELECT id, artist, track, link FROM song WHERE artist LIKE :term OR track LIKE :term";
+        $sql = "SELECT id, artist, track, link FROM songs WHERE artist LIKE :term OR track LIKE :term";
         $query = $this->db->prepare($sql);
         $query->execute([':term' => $term]);
         while ($row = $query->fetch()) {
