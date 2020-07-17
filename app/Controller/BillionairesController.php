@@ -10,7 +10,7 @@ class BillionairesController
     {
         $Billionaire = new Billionaire();
         if ($Billionaire->tableExists() === true) {
-            $Billionaires = $Billionaire->getAllSongs();
+            $Billionaires = $Billionaire->getAllBillionaires();
             $amount = $Billionaire->getAmountOfSongs();
         } else {
             $result = $Billionaire->install();
@@ -31,12 +31,12 @@ class BillionairesController
             !empty($_POST["link"]) &&
             filter_var($_POST["link"], FILTER_VALIDATE_URL) !== false) {
             $Billionaire = new Billionaire();
-            $Billionaire->addSong($_POST["name"], $_POST["money"],  $_POST["link"]);
+            $Billionaire->addBillionaire($_POST["name"], $_POST["money"],  $_POST["link"]);
         }
         $this->index();
     }
 
-    public function deleteSong($Billionaire_id)
+    public function deleteBillionaires($Billionaire_id)
     {
         if (isset($Billionaire_id)) {
             $Billionaire = new Billionaire();
@@ -45,7 +45,7 @@ class BillionairesController
         header('location: ' . URL . 'billionaires/index');
     }
 
-    public function editSong($Billionaire_id)
+    public function editBillionaires($Billionaire_id)
     {
         if (isset($Billionaire_id)) {
             $Billionaire = new Billionaire();
@@ -68,7 +68,7 @@ class BillionairesController
     {
         if (isset($_POST["updatebillionaire"])) {
             $Billionaire = new Billionaire();
-            $Billionaire->updateSong($_POST["name"], $_POST["money"],  $_POST["link"], $_POST['song_id']);
+            $Billionaire->updateBillionaire($_POST["name"], $_POST["money"],  $_POST["link"], $_POST['song_id']);
         }
         header('location: ' . URL . 'billionaires/index');
     }
@@ -77,7 +77,7 @@ class BillionairesController
     {
         if (isset($_POST["term"])) {
             $Billionaire = new Billionaire();
-            $Billionaires = $Billionaire->searchTracks($_POST["term"]);
+            $Billionaires = $Billionaire->searchBillionaires($_POST["term"]);
         } 
         require APP . 'view/_templates/header.php';
         require APP . 'view/billionaires/index.php';
