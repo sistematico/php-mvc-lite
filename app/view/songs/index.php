@@ -36,8 +36,8 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Artist</th>
-                            <th scope="col">Track</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Money</th>
                             <th scope="col">Link</th>
                             <th scope="col">Delete</th>
                             <th scope="col">Edit</th>
@@ -47,8 +47,8 @@
                         <?php foreach ($songs as $song) { ?>
                         <tr>
                             <th scope="row"><?php if (isset($song->id)) echo htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?></th>
-                            <td><?php if (isset($song->artist)) echo htmlspecialchars($song->artist, ENT_QUOTES, 'UTF-8'); ?></td>
-                            <td><?php if (isset($song->track)) echo htmlspecialchars($song->track, ENT_QUOTES, 'UTF-8'); ?></td>
+                            <td><?php if (isset($song->name)) echo htmlspecialchars($song->name, ENT_QUOTES, 'UTF-8'); ?></td>
+                            <td><?php if (isset($song->money)) echo htmlspecialchars($song->money, ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>
                                 <?php if (isset($song->link)) { ?>
                                     <a href="<?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?>" target="_blank"><?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?></a>
@@ -62,7 +62,7 @@
                 </table>
             </div>
             <?php if (isset($amount)) { ?>
-                <p>Songs: <?php echo $amount; ?></small></p>
+                <p>Billionaires: <?php echo $amount; ?></small></p>
             <?php } ?>
         <?php } ?>
     </div>
