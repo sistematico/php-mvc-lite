@@ -9,14 +9,12 @@ class SongsController
     public function index()
     {
         $Song = new Song();
-
         if ($Song->tableExists() === true) {
             $songs = $Song->getAllSongs();
             $amount = $Song->getAmountOfSongs();
         } else {
             $result = $Song->install();
         }
-
         require APP . 'view/_templates/header.php';
         require APP . 'view/songs/index.php';
         require APP . 'view/_templates/footer.php';
@@ -34,11 +32,7 @@ class SongsController
             $Song = new Song();
             $Song->addSong($_POST["artist"], $_POST["track"],  $_POST["link"]);
         }
-        //header('location: ' . URL . 'songs/index');
-
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/songs/index.php';
-        require APP . 'view/_templates/footer.php';
+        $this->index();
     }
 
     public function deleteSong($song_id)
