@@ -30,8 +30,8 @@
                             <a class="nav-link" href="<?php echo URL; ?>pages/credits">Credits</a>
                         </li>
                     </ul>
-                    <form action="<?php echo URL; ?>songs/search" method="post" class="d-flex">
-                        <input name="term" class="form-control mr-2" type="search" placeholder="Search a song" aria-label="Search">
+                    <form action="<?php echo URL; ?>billionaires/search" method="post" class="d-flex">
+                        <input name="term" class="form-control mr-2" type="search" placeholder="Search a Billionaire" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
