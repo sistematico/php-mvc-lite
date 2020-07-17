@@ -5,8 +5,3 @@ body {
 body > .container {
     padding: 60px 15px 0;
 }
-
-.fa-trash,
-.fa-edit {
-    color: white;
-}

@@ -32,7 +32,7 @@
         <?php if (isset($songs)) { ?>
             <h3 class="mt-4">List</h3>
             <div class="table-responsive">
-                <table class="table table-striped table-dark">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
