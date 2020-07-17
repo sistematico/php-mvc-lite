@@ -22,26 +22,6 @@ class SongsController
         require APP . 'view/_templates/footer.php';
     }
 
-    public function populate()
-    {
-        $Song = new Song();
-        $result = $Song->populate();
-        $songs = $Song->getAllSongs();
-        $amount_of_songs = $Song->getAmountOfSongs();
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/songs/index.php';
-        require APP . 'view/_templates/footer.php';
-    }
-
-    public function prune()
-    {
-        $Song = new Song();
-        $result = $Song->prune();
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/songs/index.php';
-        require APP . 'view/_templates/footer.php';
-    }
-
     public function addSong()
     {
         if (isset($_POST["submit_add_song"])) {
@@ -99,10 +79,10 @@ class SongsController
         require APP . 'view/_templates/footer.php';
     }
 
-    public function ajaxGetStats()
-    {
-        $Song = new Song();
-        $amount_of_songs = $Song->getAmountOfSongs();
-        echo $amount_of_songs;
-    }
+    // public function ajaxGetStats()
+    // {
+    //     $Song = new Song();
+    //     $amount_of_songs = $Song->getAmountOfSongs();
+    //     echo $amount_of_songs;
+    // }
 }
