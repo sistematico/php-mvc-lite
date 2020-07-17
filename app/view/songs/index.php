@@ -30,7 +30,7 @@
         <button name="submit_add_song" type="submit" class="btn btn-primary mb-2">Add</button>
     </form>
 
-    <?php if (isset($songs) && count($songs) > 0) { ?>
+    <?php if (isset($songs)) { ?>
     <h3>List</h3>
     <table class="table table-striped table-dark">
         <thead>
