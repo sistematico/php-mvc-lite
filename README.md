@@ -1,6 +1,6 @@
 # PHP MVC SQLite CRUD (Lite Version)
 
-Simple CRUD project (Create, Read, Update, Delete) made with [PHP](https://php.net), [Mini3](https://github.com/panique/mini3) and [Twitter Boostrap 4](https://getbootstrap.com) with [SQLite3](https://www.sqlite.org) as database.
+Simple CRUD project (Create, Read, Update, Delete) made with [PHP](https://php.net), [Mini3](https://github.com/panique/mini3) and [Twitter Boostrap 5](https://v5.getbootstrap.com) with [SQLite3](https://www.sqlite.org) as database.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ server {
     server_name localhost;
     error_log  /var/log/nginx/error.log;
     access_log /var/log/nginx/access.log;
-    root /var/www/php-mvc-lite/public;
+    root /var/www/html/public;
 
     location / {
     	index index.php;
@@ -53,10 +53,10 @@ server {
 ## Credits
 
 - [Arch Linux](https://archlinux.org)
+- [PHP](https://www.php.net)
+- [PHP-FIG](https://www.php-fig.org/psr/psr-4/)
 - [Mini3](https://github.com/panique/mini3)
-- [Twitter Boostrap 4](https://getbootstrap.com)
-- [jQuery](https://jquery.com)
-- [Composer](https://getcomposer.org)
+- [Twitter Boostrap 5](https://v5.getbootstrap.com)
 
 ## Contribute
 
