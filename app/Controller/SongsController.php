@@ -75,14 +75,7 @@ class SongsController
             $result = $Song->searchTracks($_POST["term"]);
         } 
         require APP . 'view/_templates/header.php';
-        require APP . 'view/songs/search.php';
+        require APP . 'view/songs/index.php';
         require APP . 'view/_templates/footer.php';
     }
-
-    // public function ajaxGetStats()
-    // {
-    //     $Song = new Song();
-    //     $amount_of_songs = $Song->getAmountOfSongs();
-    //     echo $amount_of_songs;
-    // }
 }
