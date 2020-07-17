@@ -22,7 +22,7 @@ class BillionairesController
 
     public function add()
     {
-        if (isset($_POST["submitbillionaire"]) &&
+        if (isset($_POST["addbillionaire"]) &&
             isset($_POST["name"]) &&
             isset($_POST["money"]) &&
             isset($_POST["link"]) &&
@@ -49,7 +49,7 @@ class BillionairesController
     {
         if (isset($id)) {
             $Billionaire = new Billionaire();
-            $Billionaire = $Billionaire->get($id);
+            $billionaire = $Billionaire->get($id);
 
             if ($Billionaire === false) {
                 $page = new \App\Controller\PagesController();
