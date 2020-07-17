@@ -8,7 +8,7 @@ class Billionaire extends Model
     //private $results = new stdClass();
     private $results = array();
 
-    public function getAllSongs()
+    public function getAll()
     {
         $query = $this->db->prepare("SELECT id, name, money, link FROM billionaires");
         $query->execute();
@@ -19,20 +19,20 @@ class Billionaire extends Model
         return (object) $this->results;
     }
 
-    public function addSong($name, $money, $link)
+    public function add($name, $money, $link)
     {
         $query = $this->db->prepare("INSERT INTO billionaires (name, money, link) VALUES (:name, :money, :link)");
         $query->execute([':name' => $name, ':money' => $money, ':link' => $link]);
     }
 
-    public function deleteSong($id)
+    public function delete($id)
     {
         $sql = "DELETE FROM billionaires WHERE id = :id";
         $query = $this->db->prepare($sql);
         $query->execute([':id' => $id]);
     }
 
-    public function getSong($id)
+    public function get($id)
     {
         $sql = "SELECT id, name, money, link FROM billionaires WHERE id = :id LIMIT 1";
         $query = $this->db->prepare($sql);
@@ -41,7 +41,7 @@ class Billionaire extends Model
         return $query->fetch();
     }
 
-    public function updateSong($name, $money, $link, $id)
+    public function update($name, $money, $link, $id)
     {
         $sql = "UPDATE billionaires SET name = :name, money = :money, link = :link WHERE id = :id";
         $query = $this->db->prepare($sql);
@@ -49,15 +49,15 @@ class Billionaire extends Model
         $query->execute($parameters);
     }
 
-    public function getAmountOfSongs()
+    public function getAmount()
     {
-        $sql = "SELECT COUNT(id) AS amount_of_songs FROM billionaires";
+        $sql = "SELECT COUNT(id) AS amount FROM billionaires";
         $query = $this->db->prepare($sql);
         $query->execute();
-        return $query->fetch()->amount_of_songs;
+        return $query->fetch()->amount;
     }
 
-    public function searchTracks($term)
+    public function search($term)
     {
         $term = "%" . $term . "%";
         $sql = "SELECT id, name, money, link FROM billionaires WHERE name LIKE :term OR money LIKE :term OR link LIKE :term";

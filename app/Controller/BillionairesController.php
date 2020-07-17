@@ -22,7 +22,7 @@ class BillionairesController
 
     public function add()
     {
-        if (isset($_POST["submitsong"]) &&
+        if (isset($_POST["submitbillionaire"]) &&
             isset($_POST["name"]) &&
             isset($_POST["money"]) &&
             isset($_POST["link"]) &&
@@ -68,7 +68,7 @@ class BillionairesController
     {
         if (isset($_POST["updatebillionaire"])) {
             $Billionaire = new Billionaire();
-            $Billionaire->update($_POST["name"], $_POST["money"],  $_POST["link"], $_POST['song_id']);
+            $Billionaire->update($_POST["name"], $_POST["money"],  $_POST["link"], $_POST['id']);
         }
         header('location: ' . URL . 'billionaires/index');
     }
