@@ -23,15 +23,15 @@ class SongsController
     public function addSong()
     {
         if (isset($_POST["submitsong"]) &&
-            isset($_POST["artist"]) &&
-            isset($_POST["track"]) &&
+            isset($_POST["name"]) &&
+            isset($_POST["money"]) &&
             isset($_POST["link"]) &&
-            !empty($_POST["artist"]) &&
-            !empty($_POST["track"]) &&
+            !empty($_POST["name"]) &&
+            !empty($_POST["money"]) &&
             !empty($_POST["link"]) &&
             filter_var($_POST["link"], FILTER_VALIDATE_URL) !== false) {
             $Song = new Song();
-            $Song->addSong($_POST["artist"], $_POST["track"],  $_POST["link"]);
+            $Song->addSong($_POST["name"], $_POST["money"],  $_POST["link"]);
         }
         $this->index();
     }
@@ -68,7 +68,7 @@ class SongsController
     {
         if (isset($_POST["updatesong"])) {
             $Song = new Song();
-            $Song->updateSong($_POST["artist"], $_POST["track"],  $_POST["link"], $_POST['song_id']);
+            $Song->updateSong($_POST["name"], $_POST["money"],  $_POST["link"], $_POST['song_id']);
         }
         header('location: ' . URL . 'songs/index');
     }
