@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Model;
-
 use App\Core\Model;
 
 class Song extends Model
 {
-
     private $results = [];
 
     public function getAllSongs()
@@ -77,45 +75,17 @@ class Song extends Model
 
     public function install()
     {
-        $sql = "CREATE TABLE IF NOT EXISTS song (id INTEGER PRIMARY KEY, artist TEXT, track TEXT, link TEXT)";
         try {
-            $this->db->exec($sql);
-            return "Table installed.";
+            if (file_exists(SQL_FILE)) {
+                $sql = file_get_contents(SQL_FILE);
+                $this->db->exec($sql);
+                return "Table installed.";
+            } else {
+                return "File " . SQL_FILE . " not found.";
+            }
         } catch(\PDOException $e) {
-            unset($e);
             return "Error: " . $e->getMessage();
         }
-    }
-
-    public function prune($tabela = 'song')
-    {
-        $this->db->exec("DROP TABLE IF EXISTS $tabela");
-
-        try {
-            $this->db->exec("CREATE TABLE IF NOT EXISTS $tabela (id INTEGER PRIMARY KEY, artist TEXT, track TEXT, link TEXT)");
-            return "Tabela $tabela recriada com sucesso.<br />";
-        } catch (\PDOException $e) {
-            return "Erro ao criar tabela $tabela: " . $e->getMessage() . "<br />";
-        }
-    }
-
-    public function populate($file = ROOT . 'songs.sql')
-    {
-        if (file_exists($file)) {
-            $sql = file_get_contents($file);
-        } else {
-            return "File $file not found.";
-        }
-
-        try {
-            $this->db->exec($sql);
-            return "Data imported";
-        } catch(\PDOException $e) {
-            //unset($e);
-            return "Error: " . $e->getMessage();
-        }
-
-        return "Error importing data";
     }
 
     public function getTableList()
@@ -125,7 +95,7 @@ class Song extends Model
         return $query->fetch();
     }
 
-    public function tableExists($table = 'song')
+    public function tableExists($table = 'songs')
     {
         $sql = "select 1 from $table";
         try {
