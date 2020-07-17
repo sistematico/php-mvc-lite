@@ -24,6 +24,9 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto mb-2 mb-md-0">
                         <li class="nav-item">
+                            <a class="nav-link" href="<?php echo URL; ?>">Home</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="<?php echo URL; ?>pages/credits">Credits</a>
                         </li>
                     </ul>
