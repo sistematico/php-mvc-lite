@@ -1,4 +1,5 @@
-<main role="main" class="container">
+<main class="flex-shrink-0">
+    <div class="container">
 
     <nav aria-label="breadcrumb" class="mt-2">
         <ol class="breadcrumb">
@@ -27,5 +28,8 @@
         <input type="hidden" name="song_id" value="<?php echo htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>" />
         <button name="submit_update_song" type="submit" class="btn btn-primary mb-2">Update</button>
     </form>
+    
+</div>
+
 </main>
 

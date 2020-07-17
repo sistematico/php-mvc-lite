@@ -1,4 +1,6 @@
-<main role="main" class="container">
+<main class="flex-shrink-0">
+    <div class="container">
+
 
     <nav aria-label="breadcrumb" class="mt-2">
         <ol class="breadcrumb">
@@ -64,4 +66,6 @@
         <?php if (isset($amount)) { ?>
             <p>Songs: <?php echo $amount; ?></small></p>
     <?php } } ?>
+
+    </div>
 </main>
