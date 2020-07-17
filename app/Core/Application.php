@@ -13,7 +13,7 @@ class Application
         $this->splitUrl();
 
         if (!$this->url_controller) {
-            $page = new \App\Controller\PagesController();
+            $page = new \App\Controller\SongsController();
             $page->index();
         } else if (file_exists(APP . 'Controller/' . ucfirst($this->url_controller) . 'Controller.php')) {
             $controller = "\\App\\Controller\\" . ucfirst($this->url_controller) . 'Controller';
