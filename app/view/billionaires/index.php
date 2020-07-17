@@ -11,7 +11,7 @@
             <div class="alert alert-primary" role="alert"><?php echo $result; ?></div>
         <?php } ?>
         <h3>Add a Billionaire</h3>
-        <form class="row g-3" action="<?php echo URL; ?>songs/addsong" method="post">
+        <form class="row g-3" action="<?php echo URL; ?>billionaires/add" method="post">
             <div class="col">
                 <label for="name" class="sr-only">Name</label>
                 <input name="name" type="text" class="form-control" id="name" placeholder="Name">
@@ -25,11 +25,11 @@
                 <input name="link" type="text" class="form-control" id="link" placeholder="Link">
             </div>
             <div class="col-1">
-                <button name="submitsong" type="submit" class="btn btn-primary mb-2">Add</button>
+                <button name="addbillionaire" type="submit" class="btn btn-primary mb-2">Add</button>
             </div>
         </form>
 
-        <?php if (isset($songs)) { ?>
+        <?php if (isset($billionaires)) { ?>
             <h3 class="mt-4">List</h3>
             <div class="table-responsive">
                 <table class="table table-bordered">
@@ -44,18 +44,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($songs as $song) { ?>
+                        <?php foreach ($billionaires as $billionaire) { ?>
                         <tr>
-                            <th scope="row"><?php if (isset($song->id)) echo htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?></th>
-                            <td><?php if (isset($song->name)) echo htmlspecialchars($song->name, ENT_QUOTES, 'UTF-8'); ?></td>
-                            <td><?php if (isset($song->money)) echo htmlspecialchars($song->money, ENT_QUOTES, 'UTF-8'); ?></td>
+                            <th scope="row"><?php if (isset($billionaire->id)) echo htmlspecialchars($billionaire->id, ENT_QUOTES, 'UTF-8'); ?></th>
+                            <td><?php if (isset($billionaire->name)) echo htmlspecialchars($billionaire->name, ENT_QUOTES, 'UTF-8'); ?></td>
+                            <td><?php if (isset($billionaire->money)) echo htmlspecialchars($billionaire->money, ENT_QUOTES, 'UTF-8'); ?></td>
                             <td>
-                                <?php if (isset($song->link)) { ?>
-                                    <a href="<?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?>" target="_blank"><?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?></a>
+                                <?php if (isset($billionaire->link)) { ?>
+                                    <a href="<?php echo htmlspecialchars($billionaire->link, ENT_QUOTES, 'UTF-8'); ?>" target="_blank"><?php echo htmlspecialchars($billionaire->link, ENT_QUOTES, 'UTF-8'); ?></a>
                                 <?php } ?>
                             </td>
-                            <td><a onClick="javascript: return confirm('Are you sure you want to delete?');" href="<?php echo URL . 'songs/deletesong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>"><i class="fas fa-trash"></i></a></td>
-                            <td><a href="<?php echo URL . 'songs/editsong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>"><i class="fas fa-edit"></i></a></td>
+                            <td><a onClick="javascript: return confirm('Are you sure you want to delete?');" href="<?php echo URL . 'billionaires/delete/' . htmlspecialchars($billionaire->id, ENT_QUOTES, 'UTF-8'); ?>"><i class="fas fa-trash"></i></a></td>
+                            <td><a href="<?php echo URL . 'billionaires/edit/' . htmlspecialchars($billionaire->id, ENT_QUOTES, 'UTF-8'); ?>"><i class="fas fa-edit"></i></a></td>
                         </tr>
                         <?php } ?>
                     </tbody>
