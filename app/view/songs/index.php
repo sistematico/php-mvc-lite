@@ -29,11 +29,13 @@
             <label for="link" class="sr-only">Link</label>
             <input name="link" type="text" class="form-control" id="link" placeholder="Link">
         </div>
-        <button name="submitsong" type="submit" class="btn btn-primary mb-2">Add</button>
+        <div class="col-1">
+            <button name="submitsong" type="submit" class="btn btn-primary mb-2">Add</button>
+        </div>
     </form>
 
     <?php if (isset($songs)) { ?>
-    <h3>List</h3>
+    <h3 class="mt-4">List</h3>
     <table class="table table-striped table-dark">
         <thead>
             <tr>
