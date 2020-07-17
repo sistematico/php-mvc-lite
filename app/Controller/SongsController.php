@@ -12,7 +12,7 @@ class SongsController
 
         if ($Song->tableExists() === true) {
             $songs = $Song->getAllSongs();
-            $amount_of_songs = $Song->getAmountOfSongs();
+            $amount = $Song->getAmountOfSongs();
         } else {
             $result = $Song->install();
         }
