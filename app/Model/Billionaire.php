@@ -3,7 +3,7 @@
 namespace App\Model;
 use App\Core\Model;
 
-class Song extends Model
+class Billionaire extends Model
 {
     //private $results = new stdClass();
     private $results = array();
