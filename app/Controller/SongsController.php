@@ -28,7 +28,8 @@ class SongsController
             isset($_POST["link"]) &&
             !empty($_POST["artist"]) &&
             !empty($_POST["track"]) &&
-            !empty($_POST["link"])) {
+            !empty($_POST["link"]) &&
+            filter_var($_POST["link"], FILTER_VALIDATE_URL) !== false) {
             $Song = new Song();
             $Song->addSong($_POST["artist"], $_POST["track"],  $_POST["link"]);
         }
