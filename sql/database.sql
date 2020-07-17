@@ -6,10 +6,10 @@ CREATE TABLE IF NOT EXISTS "billionaires" (
 );
 
 INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (1, 'Jeff Bezos', 1130, 'https://en.wikipedia.org/wiki/Jeff_Bezos');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (2, 'Bill Gates', 980, '');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (3, 'Bernard Arnault & family', 760, '');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (4, 'Warren Buffett', 675, '');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (5, 'Larry Ellison', 590, '');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (6, 'Amancio Ortega', 551, '');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (7, 'Mark Zuckerberg', 547, '');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (8, 'Jim Walton', 546, '');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (2, 'Bill Gates', 980, 'https://en.wikipedia.org/wiki/Bill_Gates');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (3, 'Bernard Arnault & family', 760, 'https://en.wikipedia.org/wiki/Bernard_Arnault');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (4, 'Warren Buffett', 675, 'https://en.wikipedia.org/wiki/Warren_Buffett');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (5, 'Larry Ellison', 590, 'https://en.wikipedia.org/wiki/Larry_Ellison');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (6, 'Amancio Ortega', 551, 'https://en.wikipedia.org/wiki/Amancio_Ortega');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (7, 'Mark Zuckerberg', 547, 'https://en.wikipedia.org/wiki/Mark_Zuckerberg');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (8, 'Jim Walton', 546, 'https://en.wikipedia.org/wiki/Jim_Walton');
