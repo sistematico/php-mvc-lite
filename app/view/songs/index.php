@@ -61,6 +61,7 @@
         </tbody>
     </table>
 
-    <p>Songs: <?php echo $amount_of_songs; ?></small></p>
-    <?php } ?>
+        <?php if (isset($amount)) { ?>
+            <p>Songs: <?php echo $amount; ?></small></p>
+    <?php } } ?>
 </main>
