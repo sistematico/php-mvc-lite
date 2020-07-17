@@ -48,7 +48,7 @@
                         <tr>
                             <th scope="row"><?php if (isset($billionaire->id)) echo htmlspecialchars($billionaire->id, ENT_QUOTES, 'UTF-8'); ?></th>
                             <td><?php if (isset($billionaire->name)) echo htmlspecialchars($billionaire->name, ENT_QUOTES, 'UTF-8'); ?></td>
-                            <td><?php if (isset($billionaire->money)) echo number_format($billionaire->money, 2, '.', ''); ?></td>
+                            <td><?php if (isset($billionaire->money)) echo (float) $billionaire->money / 10; ?></td>
                             <td>
                                 <?php if (isset($billionaire->link)) { ?>
                                     <a href="<?php echo htmlspecialchars($billionaire->link, ENT_QUOTES, 'UTF-8'); ?>" target="_blank"><?php echo htmlspecialchars($billionaire->link, ENT_QUOTES, 'UTF-8'); ?></a>
