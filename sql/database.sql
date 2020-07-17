@@ -13,3 +13,9 @@ INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (5, 'Larry E
 INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (6, 'Amancio Ortega', 551, 'https://en.wikipedia.org/wiki/Amancio_Ortega');
 INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (7, 'Mark Zuckerberg', 547, 'https://en.wikipedia.org/wiki/Mark_Zuckerberg');
 INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (8, 'Jim Walton', 546, 'https://en.wikipedia.org/wiki/Jim_Walton');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (9, 'Alice Walton', 544, 'https://en.wikipedia.org/wiki/Alice_Walton');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (10, 'Rob Walton', 541, 'https://en.wikipedia.org/wiki/Rob_Walton');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (11, 'Steve Ballmer', 527, 'https://en.wikipedia.org/wiki/Steve_Ballmer');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (12, 'Carlos Slim Helu & family', 521, 'https://en.wikipedia.org/wiki/Carlos_Slim');
+
+ 
