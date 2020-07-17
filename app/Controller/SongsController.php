@@ -24,11 +24,18 @@ class SongsController
 
     public function addSong()
     {
-        if (isset($_POST["submit_add_song"])) {
+        if (isset($_POST["submitsong"]) &&
+            isset($_POST["artist"]) &&
+            isset($_POST["track"]) &&
+            isset($_POST["link"]) &&
+            !empty($_POST["artist"]) &&
+            !empty($_POST["track"]) &&
+            !empty($_POST["link"]) &&        
+        ) {
             $Song = new Song();
             $Song->addSong($_POST["artist"], $_POST["track"],  $_POST["link"]);
         }
-        header('location: ' . URL . 'songs/index');
+        //header('location: ' . URL . 'songs/index');
     }
 
     public function deleteSong($song_id)
