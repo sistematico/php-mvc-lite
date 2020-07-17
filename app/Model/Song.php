@@ -60,12 +60,13 @@ class Song extends Model
         $query = $this->db->prepare($sql);
         $query->execute([':term' => $term]);
         while ($row = $query->fetch()) {
-            $this->results[] = [
-                'id' => $row->id,
-                'artist' => $row->artist,
-                'track' => $row->track,
-                'link' => $row->link
-            ];
+            // $this->results[] = [
+            //     'id' => $row->id,
+            //     'artist' => $row->artist,
+            //     'track' => $row->track,
+            //     'link' => $row->link
+            // ];
+            $this->results[] = $row;
         }
         return $this->results;
     }
