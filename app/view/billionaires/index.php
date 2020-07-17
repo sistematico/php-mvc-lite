@@ -18,7 +18,7 @@
             </div>
             <div class="col">
                 <label for="money" class="sr-only">Money</label>
-                <input name="money" type="text" class="form-control" id="money" placeholder="Money">
+                <input name="money" type="number" class="form-control" id="money" placeholder="Money" min="1" max="5">
             </div>
             <div class="col">
                 <label for="link" class="sr-only">Link</label>
