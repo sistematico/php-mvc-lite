@@ -16,16 +16,16 @@
     <?php } ?>
 
     <h3>Add a song</h3>
-    <form class="form-inline" action="<?php echo URL; ?>songs/addsong" method="post">
-        <div class="form-group mb-2 mr-2">
+    <form class="row g-3" action="<?php echo URL; ?>songs/addsong" method="post">
+        <div class="col">
             <label for="artist" class="sr-only">Artist</label>
             <input name="artist" type="text" class="form-control" id="artist" placeholder="Artist">
         </div>
-        <div class="form-group mb-2 mr-2">
+        <div class="col">
             <label for="track" class="sr-only">Track</label>
             <input name="track" type="text" class="form-control" id="track" placeholder="Track">
         </div>
-        <div class="form-group mb-2 mr-2">
+        <div class="col">
             <label for="link" class="sr-only">Link</label>
             <input name="link" type="text" class="form-control" id="link" placeholder="Link">
         </div>
