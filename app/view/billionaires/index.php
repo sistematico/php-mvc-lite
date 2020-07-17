@@ -36,7 +36,6 @@
                     <thead>
                         <tr>
                             <th scope="col">Rank</th>
-                            <th scope="col">ID</th>
                             <th scope="col">Name</th>
                             <th scope="col">Money</th>
                             <th scope="col">Link</th>
@@ -48,7 +47,6 @@
                         <?php $i = 1; foreach ($billionaires as $billionaire) { ?>
                         <tr>
                             <th scope="row"><?php if (isset($i)) echo $i; $i++; ?></th>
-                            <th><?php if (isset($billionaire->id)) echo htmlspecialchars($billionaire->id, ENT_QUOTES, 'UTF-8'); ?></th>
                             <td><?php if (isset($billionaire->name)) echo htmlspecialchars($billionaire->name, ENT_QUOTES, 'UTF-8'); ?></td>
                             <td><?php if (isset($billionaire->money)) echo '$' . number_format((float) $billionaire->money / 10, 1) . ' B'; ?></td>
                             <td>
