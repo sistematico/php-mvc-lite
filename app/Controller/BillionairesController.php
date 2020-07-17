@@ -10,8 +10,8 @@ class BillionairesController
     {
         $Billionaire = new Billionaire();
         if ($Billionaire->tableExists() === true) {
-            $Billionaires = $Billionaire->getAllBillionaires();
-            $amount = $Billionaire->getAmountOfBillionaires();
+            $Billionaires = $Billionaire->getAll();
+            $amount = $Billionaire->getAmount();
         } else {
             $result = $Billionaire->install();
         }
@@ -20,7 +20,7 @@ class BillionairesController
         require APP . 'view/_templates/footer.php';
     }
 
-    public function Bddbillionaire()
+    public function add()
     {
         if (isset($_POST["submitsong"]) &&
             isset($_POST["name"]) &&
@@ -31,25 +31,25 @@ class BillionairesController
             !empty($_POST["link"]) &&
             filter_var($_POST["link"], FILTER_VALIDATE_URL) !== false) {
             $Billionaire = new Billionaire();
-            $Billionaire->addBillionaire($_POST["name"], $_POST["money"],  $_POST["link"]);
+            $Billionaire->add($_POST["name"], $_POST["money"],  $_POST["link"]);
         }
         $this->index();
     }
 
-    public function deleteBillionaires($Billionaire_id)
+    public function delete($id)
     {
-        if (isset($Billionaire_id)) {
+        if (isset($id)) {
             $Billionaire = new Billionaire();
-            $Billionaire->deleteSong($Billionaire_id);
+            $Billionaire->delete($id);
         }
         header('location: ' . URL . 'billionaires/index');
     }
 
-    public function editBillionaires($Billionaire_id)
+    public function edit($id)
     {
-        if (isset($Billionaire_id)) {
+        if (isset($id)) {
             $Billionaire = new Billionaire();
-            $Billionaire = $Billionaire->getSong($Billionaire_id);
+            $Billionaire = $Billionaire->get($id);
 
             if ($Billionaire === false) {
                 $page = new \App\Controller\PagesController();
@@ -64,11 +64,11 @@ class BillionairesController
         }
     }
 
-    public function updateBillionaire()
+    public function update()
     {
         if (isset($_POST["updatebillionaire"])) {
             $Billionaire = new Billionaire();
-            $Billionaire->updateBillionaire($_POST["name"], $_POST["money"],  $_POST["link"], $_POST['song_id']);
+            $Billionaire->update($_POST["name"], $_POST["money"],  $_POST["link"], $_POST['song_id']);
         }
         header('location: ' . URL . 'billionaires/index');
     }
@@ -77,7 +77,7 @@ class BillionairesController
     {
         if (isset($_POST["term"])) {
             $Billionaire = new Billionaire();
-            $Billionaires = $Billionaire->searchBillionaires($_POST["term"]);
+            $Billionaires = $Billionaire->search($_POST["term"]);
         } 
         require APP . 'view/_templates/header.php';
         require APP . 'view/billionaires/index.php';
