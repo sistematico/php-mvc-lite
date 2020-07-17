@@ -13,11 +13,7 @@ class Application
         $this->splitUrl();
 
         if (!$this->url_controller) {
-<<<<<<< HEAD
             $page = new \App\Controller\PagesController();
-=======
-            $page = new \App\Controller\ChatController();
->>>>>>> 9ea64fe23947715b7da121bfbac428a6f9d5f9ad
             $page->index();
         } else if (file_exists(APP . 'Controller/' . ucfirst($this->url_controller) . 'Controller.php')) {
             $controller = "\\App\\Controller\\" . ucfirst($this->url_controller) . 'Controller';
@@ -36,13 +32,13 @@ class Application
                 if (strlen($this->url_action) == 0) {
                     $this->url_controller->index();
                 } else {
-                    $page = new \App\Controller\ChatController();
-                    $page->erro();
+                    $page = new \App\Controller\PagesController();
+                    $page->error();
                 }
             }
         } else {
-            $page = new \App\Controller\ChatController();
-            $page->erro();
+            $page = new \App\Controller\PagesController();
+            $page->error();
         }
     }
 
@@ -58,7 +54,13 @@ class Application
 
             unset($url[0], $url[1]);
 
+            // Rebase array keys and store the URL params
             $this->url_params = array_values($url);
+
+            // for debugging. uncomment this if you have problems with the URL
+            //echo 'Controller: ' . $this->url_controller . '<br>';
+            //echo 'Action: ' . $this->url_action . '<br>';
+            //echo 'Parameters: ' . print_r($this->url_params, true) . '<br>';
         }
     }
 }
