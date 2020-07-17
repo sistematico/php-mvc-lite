@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS "billionaires" (
 	"link"		TEXT
 );
 
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (1, 'Jeff Bezos', 1130, '');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (1, 'Jeff Bezos', 1130, 'https://en.wikipedia.org/wiki/Jeff_Bezos');
 INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (2, 'Bill Gates', 980, '');
 INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (3, 'Bernard Arnault & family', 760, '');
 INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (4, 'Warren Buffett', 675, '');
