@@ -8,13 +8,14 @@ error_reporting(E_ALL);
 
 define('ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
 define('APP', ROOT . 'app' . DIRECTORY_SEPARATOR);
+define('CONFIG', APP . 'config' . DIRECTORY_SEPARATOR);
 define('DB_FILE', ROOT . 'db' . DIRECTORY_SEPARATOR . 'banco.sqlite');
 define('SQL_FILE', ROOT . 'sql' . DIRECTORY_SEPARATOR . 'database.sql');
 
-require ROOT . 'vendor/autoload.php';
+require CONFIG . 'autoload.php';
 
-if (file_exists(APP . 'config/config.php')) {
-    require APP . 'config/config.php';
+if (file_exists(CONFIG . 'config.php')) {
+    require CONFIG . 'config.php';
 }
 
 use App\Core\Application;
