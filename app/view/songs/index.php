@@ -27,7 +27,7 @@
             <label for="link" class="sr-only">Link</label>
             <input name="link" type="text" class="form-control" id="link" placeholder="Link">
         </div>
-        <button name="submit_add_song" type="submit" class="btn btn-primary mb-2">Add</button>
+        <button name="submitsong" type="submit" class="btn btn-primary mb-2">Add</button>
     </form>
 
     <?php if (isset($songs)) { ?>
