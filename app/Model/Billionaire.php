@@ -10,7 +10,7 @@ class Billionaire extends Model
 
     public function getAll()
     {
-        $query = $this->db->prepare("SELECT id, name, money, link FROM billionaires");
+        $query = $this->db->prepare("SELECT id, name, money, link FROM billionaires ORDER BY money DESC");
         $query->execute();
         //return $query->fetchAll();
         while ($row = $query->fetch()) {
