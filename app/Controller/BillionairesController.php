@@ -16,7 +16,7 @@ class BillionairesController
             $result = $Billionaire->install();
         }
         require APP . 'view/_templates/header.php';
-        require APP . 'view/songs/index.php';
+        require APP . 'view/billionaires/index.php';
         require APP . 'view/_templates/footer.php';
     }
 
@@ -42,7 +42,7 @@ class BillionairesController
             $Billionaire = new Billionaire();
             $Billionaire->deleteSong($Billionaire_id);
         }
-        header('location: ' . URL . 'songs/index');
+        header('location: ' . URL . 'billionaires/index');
     }
 
     public function editSong($Billionaire_id)
@@ -56,11 +56,11 @@ class BillionairesController
                 $page->error();
             } else {
                 require APP . 'view/_templates/header.php';
-                require APP . 'view/songs/edit.php';
+                require APP . 'view/billionaires/edit.php';
                 require APP . 'view/_templates/footer.php';
             }
         } else {
-            header('location: ' . URL . 'songs/index');
+            header('location: ' . URL . 'billionaires/index');
         }
     }
 
@@ -70,7 +70,7 @@ class BillionairesController
             $Billionaire = new Billionaire();
             $Billionaire->updateSong($_POST["name"], $_POST["money"],  $_POST["link"], $_POST['song_id']);
         }
-        header('location: ' . URL . 'songs/index');
+        header('location: ' . URL . 'billionaires/index');
     }
 
     public function search()
@@ -80,7 +80,7 @@ class BillionairesController
             $Billionaires = $Billionaire->searchTracks($_POST["term"]);
         } 
         require APP . 'view/_templates/header.php';
-        require APP . 'view/songs/index.php';
+        require APP . 'view/billionaires/index.php';
         require APP . 'view/_templates/footer.php';
     }
 }
