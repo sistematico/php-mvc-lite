@@ -87,7 +87,8 @@ class BillionairesController
     public function prune()
     {
         $Billionaire = new Billionaire();
-        $Billionaire->prune();
+        $result = $Billionaire->prune();
+        $Billionaire->install();
         $this->index();
     }
 }
