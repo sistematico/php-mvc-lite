@@ -61,17 +61,10 @@ class Song extends Model
     public function searchTracks($term)
     {
         $term = "%" . $term . "%";
-        $sql = "SELECT id, artist, track, link FROM songs WHERE artist LIKE :term OR track LIKE :term";
+        $sql = "SELECT id, artist, track, link FROM songs WHERE artist LIKE :term OR track LIKE :term OR link LIKE :term";
         $query = $this->db->prepare($sql);
         $query->execute([':term' => $term]);
         while ($row = $query->fetch()) {
-            // $this->results[] = [
-            //     'id' => $row->id,
-            //     'artist' => $row->artist,
-            //     'track' => $row->track,
-            //     'link' => $row->link
-            // ];
-            //$this->results[] = $row;
             $this->results[] = $row;
         }
         return (object) $this->results;
