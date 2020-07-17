@@ -6,9 +6,9 @@ CREATE TABLE IF NOT EXISTS "billionaires" (
 );
 
 INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (1, 'Jeff Bezos', 113, 'http://zezedicamargoeluciano.com.br');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (2, 'Bill Gates', 54, '');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (3, 'Chrystian & Ralf', 'Sozinho em Nova York', 'http://www.chrystianeralf.com.br');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (4, 'Henrique e Juliano', 'Garrafas Vazias', '');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (5, 'Gusttavo Lima', 'Agente Fez Amor', 'https://www.youtube.com/watch?v=S2OI1CtnfUM');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (6, 'Marília Mendonça', 'Tentativas', '');
-INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (7, 'Di Paullo & Paulino', 'Nada Mudou', '');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (2, 'Bill Gates', 98, '');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (3, 'Bernard Arnault & family', 76, 'http://www.chrystianeralf.com.br');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (4, 'Warren Buffett', 67, '');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (5, 'Larry Ellison', 59, 'https://www.youtube.com/watch?v=S2OI1CtnfUM');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (6, 'Amancio Ortega', 55, '');
+INSERT OR IGNORE INTO "billionaires" (id, name,	money, link) VALUES (7, 'Mark Zuckerberg', 54, '');
