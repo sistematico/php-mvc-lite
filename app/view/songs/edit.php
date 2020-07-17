@@ -4,13 +4,13 @@
     <nav aria-label="breadcrumb" class="mt-2">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php echo URL; ?>">Home</a></li>
-            <li class="breadcrumb-item"><a href="<?php echo URL; ?>songs">Songs</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo URL; ?>songs">Billionaires</a></li>
             <li class="breadcrumb-item active" aria-current="page">Edit</li>
         </ol>
     </nav>
 
-    <h1>Songs</h1>
-    <h3>Edit a song</h3>
+    <h1>Billionaires</h1>
+    <h3>Edit a Billionaire</h3>
 
     <form class="row g-3" action="<?php echo URL; ?>songs/updatesong" method="post">
         <input type="hidden" name="song_id" value="<?php echo htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>" />

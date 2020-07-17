@@ -3,22 +3,22 @@
         <nav aria-label="breadcrumb" class="mt-2">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="<?php echo URL; ?>">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Songs</li>
+                <li class="breadcrumb-item active" aria-current="page">Billionaires</li>
             </ol>
         </nav>
-        <h1>Songs</h1>
+        <h1>Billionaires</h1>
         <?php if (isset($result)) { ?>
             <div class="alert alert-primary" role="alert"><?php echo $result; ?></div>
         <?php } ?>
-        <h3>Add a song</h3>
+        <h3>Add a Billionaire</h3>
         <form class="row g-3" action="<?php echo URL; ?>songs/addsong" method="post">
             <div class="col">
-                <label for="artist" class="sr-only">Artist</label>
-                <input name="artist" type="text" class="form-control" id="artist" placeholder="Artist">
+                <label for="name" class="sr-only">Name</label>
+                <input name="name" type="text" class="form-control" id="name" placeholder="Name">
             </div>
             <div class="col">
-                <label for="track" class="sr-only">Track</label>
-                <input name="track" type="text" class="form-control" id="track" placeholder="Track">
+                <label for="money" class="sr-only">Money</label>
+                <input name="money" type="text" class="form-control" id="money" placeholder="Money">
             </div>
             <div class="col">
                 <label for="link" class="sr-only">Link</label>
