@@ -6,15 +6,13 @@ Simple CRUD project (Create, Read, Update, Delete) made with [PHP](https://php.n
 
 - [Nginx](https://www.nginx.com) or [Apache](https://www.apache.org)
 - [PHP](https://php.net)
-- [Composer](https://getcomposer.org)
 - [Docker(opcional)](https://www.docker.com/)
 - [Faith](https://en.wikipedia.org/wiki/Faith)
 
 ## Installation
 
-- Unzip or clone this repository on your web server's webroot: `cd /var/www/html && git clone https://github.com/sistematico/php-mvc-lite`
-- Run command `composer install` in the same directory where the file `composer.json` is located.
-- Go to https://site.com/songs/install
+- Unzip or clone this repository on your web server's webroot: `git clone https://github.com/sistematico/php-mvc-lite /var/www/html`
+- Go to https://site.com
 - Pray.
 
 ## Nginx
