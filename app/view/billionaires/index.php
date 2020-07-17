@@ -24,7 +24,7 @@
                 <label for="link" class="sr-only">Link</label>
                 <input name="link" type="text" class="form-control" id="link" placeholder="Link">
             </div>
-            <div class="col-1">
+            <div class="col-sm-12 col-md-1">
                 <button name="addbillionaire" type="submit" class="btn btn-primary mb-2">Add</button>
             </div>
         </form>
