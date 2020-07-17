@@ -72,7 +72,7 @@ class SongsController
     {
         if (isset($_POST["term"])) {
             $Song = new Song();
-            $result = $Song->searchTracks($_POST["term"]);
+            $songs = $Song->searchTracks($_POST["term"]);
         } 
         require APP . 'view/_templates/header.php';
         require APP . 'view/songs/index.php';

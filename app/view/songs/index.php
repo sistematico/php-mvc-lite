@@ -62,10 +62,5 @@
     </table>
 
     <p>Songs: <?php echo $amount_of_songs; ?></small></p>
-    <!-- <h3>Amount of songs (via AJAX)</h3>
-    <div id="javascript-ajax-result-box" class="mb-3"></div>
-    <div>
-        <button id="javascript-ajax-button" class="btn btn-danger mb-2">Get Amount</button>
-    </div> -->
     <?php } ?>
 </main>
