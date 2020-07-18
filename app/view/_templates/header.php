@@ -27,6 +27,9 @@
                             <a class="nav-link" href="<?php echo URL; ?>">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="<?php echo URL; ?>pages/about">About</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="<?php echo URL; ?>pages/credits">Credits</a>
                         </li>
                     </ul>
