@@ -26,8 +26,8 @@
             <label for="link" class="form-label">Link (Valid URL required)</label>
             <input name="link" type="text" class="form-control" id="link" placeholder="Link" value="<?php echo htmlspecialchars($billionaire->link, ENT_QUOTES, 'UTF-8'); ?>" />
         </div>
-        <div class="col-sm-12 col-md-1 align-bottom mt-auto">
-            <button name="updatebillionaire" type="submit" class="btn btn-primary mb-2">Update</button>
+        <div class="col-sm-12 col-md-1 mt-auto">
+            <button name="updatebillionaire" type="submit" class="btn btn-primary">Update</button>
         </div>
     </form>
     
