@@ -24,8 +24,8 @@
                 <label for="link" class="form-label">Link (Valid URL required)</label>
                 <input name="link" type="text" class="form-control" id="link" placeholder="Link">
             </div>
-            <div class="col-sm-12 col-md-1">
-                <button name="addbillionaire" type="submit" class="btn btn-primary mb-2">Add</button>
+            <div class="col-sm-12 col-md-1 align-bottom mb-2">
+                <button name="addbillionaire" type="submit" class="btn btn-primary">Add</button>
             </div>
         </form>
 
