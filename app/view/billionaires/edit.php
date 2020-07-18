@@ -15,15 +15,15 @@
     <form class="row g-3" action="<?php echo URL; ?>billionaires/update" method="post">
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($billionaire->id, ENT_QUOTES, 'UTF-8'); ?>" />
         <div class="col">
-            <label for="name" class="sr-only">Name</label>
+            <label for="name" class="form-label">Name</label>
             <input name="name" type="text" class="form-control" id="name" placeholder="Name" value="<?php echo htmlspecialchars($billionaire->name, ENT_QUOTES, 'UTF-8'); ?>" required />
         </div>
         <div class="col">
-            <label for="money" class="sr-only">Money</label>
+            <label for="money" class="form-label">Money(in billions)</label>
             <input name="money" type="number" class="form-control" id="money" placeholder="Money" min="1" max="5" value="<?php echo htmlspecialchars($billionaire->money, ENT_QUOTES, 'UTF-8'); ?>" required>
         </div>
         <div class="col">
-            <label for="link" class="sr-only">Link</label>
+            <label for="link" class="form-label">Link (Valid URL required)</label>
             <input name="link" type="text" class="form-control" id="link" placeholder="Link" value="<?php echo htmlspecialchars($billionaire->link, ENT_QUOTES, 'UTF-8'); ?>" />
         </div>
         <div class="col-1">
