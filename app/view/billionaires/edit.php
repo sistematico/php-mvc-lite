@@ -22,7 +22,7 @@
             <label for="money" class="form-label">Money(in billions)</label>
             <input name="money" type="number" class="form-control" id="money" placeholder="Money" min="1" max="5" value="<?php echo htmlspecialchars($billionaire->money, ENT_QUOTES, 'UTF-8'); ?>" required>
         </div>
-        <div class="col-sm-12 col-md-6 mb-3">
+        <div class="col-sm-12 col-md-6">
             <label for="link" class="form-label">Link (Valid URL required)</label>
             <input name="link" type="text" class="form-control" id="link" placeholder="Link" value="<?php echo htmlspecialchars($billionaire->link, ENT_QUOTES, 'UTF-8'); ?>" />
         </div>

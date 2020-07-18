@@ -20,7 +20,7 @@
                 <label for="money" class="form-label">Money(in billions)</label>
                 <input name="money" type="number" class="form-control" id="money" placeholder="Money" min="1" max="999">
             </div>
-            <div class="col-sm-12 col-md-6 mb-3">
+            <div class="col-sm-12 col-md-6">
                 <label for="link" class="form-label">Link (Valid URL required)</label>
                 <input name="link" type="text" class="form-control" id="link" placeholder="Link">
             </div>
