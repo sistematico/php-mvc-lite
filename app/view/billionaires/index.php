@@ -13,15 +13,15 @@
         <h3>Add a Billionaire</h3>
         <form class="row g-3" action="<?php echo URL; ?>billionaires/add" method="post">
             <div class="col-sm-8 col-md-3">
-                <label for="name" class="sr-only">Name</label>
+                <label for="name" class="form-label">Name</label>
                 <input name="name" type="text" class="form-control" id="name" placeholder="Name">
             </div>
             <div class="col-sm-4 col-md-2">
-                <label for="money" class="sr-only">Money</label>
-                <input name="money" type="number" class="form-control" id="money" placeholder="Money" min="999" max="99999">
+                <label for="money" class="form-label">Money(in billions)</label>
+                <input name="money" type="number" class="form-control" id="money" placeholder="Money" min="1" max="999">
             </div>
             <div class="col-sm-12 col-md-6">
-                <label for="link" class="sr-only">Link</label>
+                <label for="link" class="form-label">Link (Valid URL required)</label>
                 <input name="link" type="text" class="form-control" id="link" placeholder="Link">
             </div>
             <div class="col-sm-12 col-md-1">
