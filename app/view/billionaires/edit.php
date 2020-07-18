@@ -14,7 +14,7 @@
 
     <form class="row g-3" action="<?php echo URL; ?>billionaires/update" method="post">
         <input type="hidden" name="id" value="<?php echo htmlspecialchars($billionaire->id, ENT_QUOTES, 'UTF-8'); ?>" />
-        <div class="col">
+        <div class="col-sm-8 col-md-3">
             <label for="name" class="form-label">Name</label>
             <input name="name" type="text" class="form-control" id="name" placeholder="Name" value="<?php echo htmlspecialchars($billionaire->name, ENT_QUOTES, 'UTF-8'); ?>" required />
         </div>
