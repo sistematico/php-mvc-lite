@@ -21,6 +21,7 @@ class Billionaire extends Model
 
     public function add($name, $money, $link)
     {
+        $money = $money * 10;
         $query = $this->db->prepare("INSERT INTO billionaires (name, money, link) VALUES (:name, :money, :link)");
         $query->execute([':name' => $name, ':money' => $money, ':link' => $link]);
     }
