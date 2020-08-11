@@ -6,6 +6,12 @@ use App\Model\Billionaire;
 
 class BillionairesController
 {
+    public function json()
+    {
+        $Billionaire = new Billionaire();
+        echo json_encode($Billionaire->getAll());
+    }
+
     public function index()
     {
         $Billionaire = new Billionaire();
