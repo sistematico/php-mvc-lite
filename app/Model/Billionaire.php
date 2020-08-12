@@ -6,17 +6,16 @@ use App\Helper\Db;
 
 class Billionaire extends Model
 {
-    //private $results = new stdClass();
     private $results = array();
 
     public function getAll()
     {
         if (!Db::exists($this->db, 'billionaires')) {
-            Db::install();
+            Db::install($this->db);
         }
+
         $query = $this->db->prepare("SELECT id, name, money, link FROM billionaires ORDER BY money DESC");
         $query->execute();
-        //return $query->fetchAll();
         while ($row = $query->fetch()) {
             $this->results[] = $row;
         }
@@ -54,7 +53,7 @@ class Billionaire extends Model
         $query->execute($parameters);
     }
 
-    public function getAmount()
+    public function amount()
     {
         $sql = "SELECT COUNT(id) AS amount FROM billionaires";
         $query = $this->db->prepare($sql);
