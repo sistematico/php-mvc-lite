@@ -35,7 +35,7 @@ sudo mv ngrok /usr/local/bin
 
 # create systemd script
 echo "[Unit]
-Description=ngrok script
+Description=Ngrok
 
 [Service]
 ExecStart=/usr/local/bin/ngrok start --all -log=/opt/ngrok/ngrok.log -config=/opt/ngrok/ngrok.yml
