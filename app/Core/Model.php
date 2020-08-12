@@ -17,7 +17,7 @@ class Model
 
     private function open() {
         if (!is_dir(dirname(DB_FILE))) {
-            mkdir(dirname(DB_FILE), 0755);
+            mkdir(dirname(DB_FILE), 0775);
         }
 
         $this->db = new PDO('sqlite:' . DB_FILE);
