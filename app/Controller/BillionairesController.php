@@ -6,21 +6,11 @@ use App\Model\Billionaire;
 
 class BillionairesController
 {
-    public function json()
-    {
-        $Billionaire = new Billionaire();
-        echo json_encode($Billionaire->getAll());
-    }
-
     public function index()
     {
         $Billionaire = new Billionaire();
-        if ($Billionaire->tableExists() === true) {
-            $billionaires = $Billionaire->getAll();
-            $amount = $Billionaire->amount();
-        } else {
-            $result = $Billionaire->install();
-        }
+        $billionaires = $Billionaire->getAll();
+        $amount = $Billionaire->amount();
         require APP . 'view/_templates/header.php';
         require APP . 'view/billionaires/index.php';
         require APP . 'view/_templates/footer.php';
