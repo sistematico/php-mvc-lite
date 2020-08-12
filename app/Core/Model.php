@@ -11,7 +11,8 @@ class Model
         try {
             $this->open();
         } catch (\PDOException $e) {
-            exit('The connection to the database cannot be made.');
+            echo $e->getMessage();
+            //exit('The connection to the database cannot be made.');
         }
     }
 
