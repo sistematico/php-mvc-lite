@@ -10,8 +10,8 @@ class Billionaire extends Model
 
     public function getAll()
     {
-        if (!Db::exists($this->db, 'billionaires')) {
-            Db::install($this->db);
+        if (!$this->exists('billionaires')) {
+            $this->install();
         }
 
         $query = $this->db->prepare("SELECT id, name, money, link FROM billionaires ORDER BY money DESC");
@@ -73,21 +73,6 @@ class Billionaire extends Model
         return (object) $this->results;
     }
 
-    public function install()
-    {
-        try {
-            if (file_exists(SQL_FILE)) {
-                $sql = file_get_contents(SQL_FILE);
-                $this->db->exec($sql);
-                return "Table installed.";
-            } else {
-                return "File " . SQL_FILE . " not found.";
-            }
-        } catch(\PDOException $e) {
-            return "Error: " . $e->getMessage();
-        }
-    }
-
     public function prune()
     {
         try {
@@ -116,5 +101,36 @@ class Billionaire extends Model
             return false;
         }
         return false;
-    }    
+    }  
+    
+    public function exists($table)
+    {
+        try {
+            $this->db->exec("SELECT 1 FROM {$table}");
+            return true;
+        } catch(\PDOException $e) {
+            unset($e);
+            return false;
+        }
+
+        return false;
+    }
+
+
+    public function install()
+    {
+        try {
+            if (file_exists(SQL_FILE)) {
+                $sql = file_get_contents(SQL_FILE);
+                $this->db->exec($sql);
+                return true;
+            } else {
+                return false;
+            }
+        } catch(\PDOException $e) {
+            unset($e);
+            #return "Error: " . $e->getMessage();
+            return false;
+        }
+    }
 }
