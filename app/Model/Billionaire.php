@@ -2,6 +2,7 @@
 
 namespace App\Model;
 use App\Core\Model;
+use App\Helper\Db;
 
 class Billionaire extends Model
 {
@@ -10,6 +11,9 @@ class Billionaire extends Model
 
     public function getAll()
     {
+        if (!Db::exists($this->db, 'billionaires')) {
+            Db::install();
+        }
         $query = $this->db->prepare("SELECT id, name, money, link FROM billionaires ORDER BY money DESC");
         $query->execute();
         //return $query->fetchAll();
