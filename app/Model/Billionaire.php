@@ -10,8 +10,8 @@ class Billionaire extends Model
 
     public function getAll()
     {
-        if (!$this->exists('billionaires')) {
-            $this->install();
+        if (!Db::exists($this->db, 'billionaires')) {
+            Db::install($this->db);
         }
 
         $query = $this->db->prepare("SELECT id, name, money, link FROM billionaires ORDER BY money DESC");
