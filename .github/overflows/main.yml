@@ -18,3 +18,4 @@ jobs:
             cd /var/www/labs.lucasbrum.net/projetos/php-mvc-lite
             git pull
             
+            
