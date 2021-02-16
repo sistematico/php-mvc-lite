@@ -17,3 +17,4 @@ jobs:
             git clone git@github.com:sistematico/php-mvc-lite.git /var/www/labs.lucasbrum.net/projetos/php-mvc-lite
             cd /var/www/labs.lucasbrum.net/projetos/php-mvc-lite
             git pull
+            
